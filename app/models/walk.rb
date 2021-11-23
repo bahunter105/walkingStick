@@ -5,4 +5,5 @@ class Walk < ApplicationRecord
   has_many :users, through: :completed_walks
   has_many :walk_landmarks
   has_many :landmarks, through: :walk_landmarks
+  has_one_attached :photo
 end
