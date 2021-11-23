@@ -5,6 +5,7 @@ class Landmark < ApplicationRecord
   has_many :walks, through: :walk_landmarks
   has_many :users, through: :ratings
   has_many :ratings
+  has_one_attached :photo
 
   validates :title, presence: true
 end
