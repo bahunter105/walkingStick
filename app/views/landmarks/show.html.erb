@@ -1,0 +1,6 @@
+<h1> <%= @landmark.title %> </h1>
+<p>
+  <%=link_to walk_path(@walk) do%>
+    Back to Walk: <%= @walk.title %>
+  <% end %>
+</p>
