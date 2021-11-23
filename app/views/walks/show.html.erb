@@ -1,0 +1,13 @@
+<h1> <%= @walk.title %> </h1>
+<p>
+  <%=link_to walk_landmark_path(@walk.landmarks.first) do%>
+    <%= @walk.landmarks.first.title %>
+  <% end %>
+</p>
+
+
+<p>
+  <%=link_to walks_path do%>
+    Back to Walks Index page: <%= @walk.title %>
+  <% end %>
+</p>

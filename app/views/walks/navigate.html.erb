@@ -1,0 +1,13 @@
+<h1> Navigate to: <%= @landmark.title %> </h1>
+<p>
+  <%=link_to do%>
+    I've Arrived at: <%= @landmark.title %>
+  <% end %>
+</p>
+
+
+<p>
+  <%=link_to walk_path(@walk) do%>
+    Take me back to walk page
+  <% end %>
+</p>
