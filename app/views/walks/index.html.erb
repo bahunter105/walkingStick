@@ -1,12 +1,15 @@
 <div class="banner" style="background-image: url(https://madridfoodtour.com/wp-content/uploads/retiro-overhead-U-scaled.jpeg);">
   <div class="banner-container">
-    <h1><%= @walks.first.title %></h1>
+    <h1>Madrid</h1>
     <h3>Walking Tours</h3>
   </div>
 </div>
 
 
 <p>
-  <%=link_to walk_path(@walks.first) do%>
+  <%=link_to walk_path(@walks) do%>
+    Title of first walk:
   <% end %>
 </p>
+
+<a class="btn btn-gradient" href="#">Start walk</a>
