@@ -14,11 +14,10 @@
   </div>
 <% end %>
 
-
-<p>
-  <%=link_to walk_path(@walks) do%>
-    Title of first walk:
-  <% end %>
-</p>
-
-<a class="btn btn-gradient" href="#">Start walk</a>
+<% @walks.each do |walk|%>
+  <p>
+    <%=link_to walk_path(walk), class:"btn btn-gradient" do%>
+      <%=  walk.title %>
+    <% end %>
+  </p>
+<% end %>
