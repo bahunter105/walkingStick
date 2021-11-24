@@ -6,6 +6,21 @@ class WalksController < ApplicationController
   def show
     @walk = Walk.find(params[:id])
     @landmarks = @walk.landmarks
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    # @markers = @landmarks.geocoded.map do |landmark|
+    #   {
+    #     lat: landmark.latitude,
+    #     lng: landmark.longitude,
+    #     info_window: render_to_string(partial: "map_info_window", locals: { landmark: landmark })
+    #   }
+    # end
+    @markers = @landmarks.map do |landmark|
+      {
+        lat: landmark.latitude,
+        lng: landmark.longitude,
+        info_window: render_to_string(partial: "map_info_window", locals: { landmark: landmark })
+      }
+    end
   end
 
   def navigate
