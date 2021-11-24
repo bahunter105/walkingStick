@@ -7,38 +7,39 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleanig DB"
-Offer.destroy_all
 User.destroy_all
 
 puts "Creating Walks and Users"
 
 user1 = User.new
-user1.first_name = 'Sally'
-user1.last_name = 'Secret'
+# user1.first_name = 'Sally'
+# user1.last_name = 'Secret'
 user1.email = 'user1@timepeek.com'
 user1.password = '123456'
-user1.password_confirmation = '123456'
-user1.encrypted_password = '123456'
+# user1.password_confirmation = '123456'
+# user1.encrypted_password = '123456'
 user1.save
-file = File.open('app/assets/images/sally.jpg')
-user1.photo.attach(io: file, filename: 'sally.jpg', content_type: 'image/jpg')
+# file = File.open('app/assets/images/sally.jpg')
+# user1.photo.attach(io: file, filename: 'sally.jpg', content_type: 'image/jpg')
 
 category = Category.new
 category.name = 'nature'
 category.save
 
 walk = Walk.create!(
+  creator: user1,
   title: 'Retiro Walk Tour',
   description: 'This must see tour through one of Madrids most emblematic parks begins at the Puerta de la Independencia del Retiro.',
   category: category,
   rating: rand(1..5)),
-file = File.open('app/assets/images/retiro.img')
-walk.photo.attach(io: file, filename: 'retiro.img', content_type: 'image/img')
+file = File.open('app/assets/images/retiro.jpg')
+walk.photo.attach(io: file, filename: 'retiro.jpg', content_type: 'image/img')
 walk.user = user1
 walk.save
 puts new_walk.name
 
 landmark = Landmark.new
+landmark.creator = user1
 landmark.title = 'Puerta De La Independencia'
 landmark.longitude = '40.41980219794448'
 landmark.latitude = '-3.68813812508112'
@@ -55,6 +56,7 @@ wl.landmark_order_no = 1
 wl.save
 
 landmark = Landmark.new
+landmark.creator = user1
 landmark.title = ' Paseo De Las Estatuas	'
 landmark.longitude = '40.41714717107496'
 landmark.latitude = '-3.6862778999999994'
@@ -72,6 +74,7 @@ wl.save
 
 
 landmark = Landmark.new
+landmark.creator = user1
 landmark.title = 'Alfonso XII Monument'
 landmark.longitude = '40.417440504018366'
 landmark.latitude = '-3.683049973659502'
@@ -88,6 +91,7 @@ wl.landmark_order_no = 3
 wl.save
 
 landmark = Landmark.new
+landmark.creator = user1
 landmark.title = ' La Rosaleda '
 landmark.longitude = '40.410904446810775'
 landmark.latitude = '-3.6803869755084424'
@@ -104,6 +108,7 @@ wl.landmark_order_no = 4
 wl.save
 
 landmark = Landmark.new
+landmark.creator = user1
 landmark.title = 'Casita Del Pescador'
 landmark.longitude = '40.420711165978'
 landmark.latitude = '-3.6809420448805135'
@@ -120,6 +125,7 @@ wl.landmark_order_no = 5
 wl.save
 
 landmark = Landmark.new
+landmark.creator = user1
 landmark.title = 'Estatua Del Angel Caido'
 landmark.longitude = '40.41115997729375'
 landmark.latitude = '-3.6825368025521836'
@@ -136,6 +142,7 @@ wl.landmark_order_no = 6
 wl.save
 
 walk = Walk.create!(
+  creator: user1,
   title: 'Palacio Real',
   description: 'A tour through the emblematic and majestic royal palace',
   category: category,
@@ -147,6 +154,7 @@ walk.save
 puts new_walk.name
 
 walk = Walk.create!(
+  creator: user1,
   title: 'Tapas Walking Tour',
   description: 'A tour with some the best tapas offered in Madrid',
   category: category,
@@ -158,6 +166,7 @@ walk.save
 puts new_walk.name
 
 walk = Walk.create!(
+  creator: user1,
   title: 'La Almudena Cathedral',
   description: 'A tour around one of the most beautiful of the Spanish capitals cathedrals',
   category: category,
@@ -169,6 +178,7 @@ walk.save
 puts new_walk.name
 
 walk = Walk.create!(
+  creator: user1,
   title: 'El Prado Museum',
   description: 'A tour around one of the most important museums...',
   category: category,
