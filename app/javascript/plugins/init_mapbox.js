@@ -29,6 +29,19 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
+    if (mapElement.dataset.needUserMarker === 'true') {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude
+        let lng = position.coords.longitude;
+        let currentCoords = {
+          lng: lng,
+          lat: lat,
+          info_window: '<h1>This is you</h1>'
+        };
+        markers.unshift(currentCoords);
+        console.log(markers);
+      });
+    }
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
