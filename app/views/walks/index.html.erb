@@ -14,11 +14,29 @@
   </div>
 <% end %>
 
-
-<p>
-  <%=link_to walk_path(@walks) do%>
-    Title of first walk:
+<% @walks.each do |walk| %>
+  <%= link_to walk_path(walk) do %>
+    <div class="card-walk">
+      <%= image_tag "puerta_retiro.png", alt: "Retiro" %>
+      <div class="card-walk-infos">
+        <div class="card-group-top">
+          <h2><%= walk.title %></h2>
+          <p><i class="fas fa-star"></i><%= walk.rating.to_f %></p>
+        </div>
+        <div class="card-group-bottom">
+          <div class="row">
+            <div class="text-left">
+              <p>Creator name</p>
+            </div>
+            <div class="text-right">
+              <p>Distance</p>
+              <p>Time</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</p>
+<% end %>
 
 <a class="btn btn-gradient" href="#">Start walk</a>
