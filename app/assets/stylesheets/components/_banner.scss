@@ -1,0 +1,37 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 48vh;
+  text-align: center;
+  padding: 150px 0;
+
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+    font-size: 48px;
+    font-weight: bold;
+    position: absolute;
+    padding-top: 40px;
+  }
+
+  h2 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    padding-top: 40px;
+  }
+
+  h3 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    padding-bottom: 20px;
+  }
+}
