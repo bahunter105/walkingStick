@@ -18,7 +18,7 @@ class WalksController < ApplicationController
       {
         lat: landmark.latitude,
         lng: landmark.longitude,
-        info_window: render_to_string(partial: "map_info_window", locals: { landmark: landmark })
+        info_window: render_to_string(partial: "info_window", locals: { landmark: landmark })
       }
     end
   end
