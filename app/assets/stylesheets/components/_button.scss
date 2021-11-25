@@ -1,6 +1,7 @@
 .btn-gradient {
   color: white;
-  padding: 14px 92px;
+  width: 280px;
+  padding: 10px;
   border-radius: 32px;
   font-size: 24px;
   font-weight: bold;
@@ -14,4 +15,17 @@
   }
 }
 
+.btn-flat {
+  color: white;
+  padding: 6px 24px;
+  border-radius: 32px;
+  background: #218380;
+  transition: background 0.3s ease;
+  border: 1px solid #000000;
+
+  &:hover {
+    background: #1b6d6a;
+    color: white;
+  }
+}
 
