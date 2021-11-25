@@ -1,15 +1,26 @@
+<%= content_for(:navbar_class, "navbar-transparent") %>
+
 <h1> <%= @walk.title %> </h1>
-<p>
-  <%=link_to walk_landmark_path(@walk.landmarks.first) do%>
-    <%= @walk.landmarks.first.title %>
-  <% end %>
-</p>
+
+<%@walk.walk_landmarks.order(landmark_order_no: :asc).each do |walk_landmark|  %>
+  <h3>
+    <%=link_to walk_landmark_path(@walk, walk_landmark.landmark) do%>
+      <%= walk_landmark.landmark_order_no%>. <%= walk_landmark.landmark.title %>
+    <% end %>
+  </h3>
+<% end %>
 
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
+<p>
+  <%=link_to "/walks/#{@walk.id}/1" do%>
+    Start Walk!
+  <% end %>
+</p>
 
 <p>
   <%=link_to walks_path do%>

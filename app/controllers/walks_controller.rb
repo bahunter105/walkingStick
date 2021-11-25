@@ -39,14 +39,13 @@ class WalksController < ApplicationController
   def navigate
     @walk = Walk.find(params[:walk_id])
     @landmark = @walk.walk_landmarks.find_by(landmark_order_no: params[:landmark_order_no]).landmark
-
-     @markers = [
+    @markers = [
        {
          lat: @landmark.latitude,
          lng: @landmark.longitude,
          info_window: render_to_string(partial: "info_window", locals: { landmark: @landmark })
        }
-     ]
+    ]
     # base_url= "https://api.mapbox.com/directions/v5/mapbox/walking/"
     # current_location = [-3.0000, 40.000]
     # base_url += "#{current_location[0]}%#{current_location[1]};#{@landmark.longitude}%#{@landmark.latitude}"

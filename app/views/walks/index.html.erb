@@ -1,3 +1,5 @@
+<%= content_for(:navbar_class, "navbar-transparent") %>
+
 <div class="banner" style="background-image: url(https://madridfoodtour.com/wp-content/uploads/retiro-overhead-U-scaled.jpeg);">
   <div class="banner-container">
     <h1>Madrid</h1>
@@ -5,11 +7,34 @@
   </div>
 </div>
 
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search another city" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+<% end %>
 
-<p>
-  <%=link_to walk_path(@walks) do%>
-    Title of first walk:
+<% @walks.each do |walk| %>
+  <%= link_to walk_path(walk) do %>
+    <div class="card-walk">
+      <%= image_tag "puerta_retiro.png", alt: "Retiro" %>
+      <div class="card-walk-infos">
+        <div class="card-group-top">
+          <h2><%= walk.title %></h2>
+          <p><i class="fas fa-star"></i><%= walk.rating.to_f %></p>
+        </div>
+        <div class="card-group-bottom">
+          <div class="text-left">
+            <p><%= walk.creator.email %></p>
+          </div>
+          <div class="text-right">
+            <p>Distance</p>
+            <p>Time</p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</p>
-
-<a class="btn btn-gradient" href="#">Start walk</a>
+<% end %>
