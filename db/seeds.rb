@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts "Cleanig DB"
 WalkLandmark.destroy_all
 Walk.destroy_all
@@ -43,6 +45,12 @@ file = File.open('app/assets/images/puerta_retiro.png')
 landmark.photo.attach(io: file, filename: 'puerta_retiro.png', content_type: 'image/png')
 landmark.creator = user1
 landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
 puts landmark.title
 
 wl = WalkLandmark.new
@@ -62,6 +70,13 @@ file = File.open('app/assets/images/alfonsoXII.jpg')
 landmark.photo.attach(io: file, filename: 'alfonsoXII.jpg', content_type: 'image/jpg')
 landmark.creator = user1
 landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
 
 wl = WalkLandmark.new
 wl.walk = walk
@@ -79,6 +94,13 @@ file = File.open('app/assets/images/rosaleda.png')
 landmark.photo.attach(io: file, filename: 'rosaleda.png', content_type: 'image/png')
 landmark.creator = user1
 landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
 
 wl = WalkLandmark.new
 wl.walk = walk
@@ -96,6 +118,13 @@ file = File.open('app/assets/images/casapescador.png')
 landmark.photo.attach(io: file, filename: 'casapescador.png', content_type: 'image/png')
 landmark.creator = user1
 landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
 
 wl = WalkLandmark.new
 wl.walk = walk
@@ -113,6 +142,13 @@ file = File.open('app/assets/images/angel.png')
 landmark.photo.attach(io: file, filename: 'angel.png', content_type: 'image/png')
 landmark.creator = user1
 landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
 
 wl = WalkLandmark.new
 wl.walk = walk

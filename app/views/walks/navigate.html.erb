@@ -1,6 +1,11 @@
 <h1> Navigate to: <%= @landmark.title %> </h1>
+
+<div>
+  <audio src="<%=cloudinary_url(@landmark.prearrival_audio.key, :resource_type=>"video")%>" controls></audio>
+</div>
+
 <p>
-  <%=link_to do%>
+  <%=link_to walk_landmark_path(@walk, @landmark) do%>
     I've Arrived at: <%= @landmark.title %>
   <% end %>
 </p>
