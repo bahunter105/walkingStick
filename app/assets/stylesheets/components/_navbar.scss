@@ -1,11 +1,31 @@
 .navbar-lewagon {
   position: absolute;
   width: 100%;
-  background: transparent;
   box-shadow: none;
   margin-top: 8px;
+  text-align: left;
+  .navbar-wagon-link {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-transparent {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+  .navbar-transparent-link {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.navbar-transparent .navbar-collapse {
   flex-grow: 0;
 }
