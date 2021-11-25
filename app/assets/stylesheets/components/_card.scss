@@ -1,15 +1,16 @@
 .card-walk {
   overflow: hidden;
-  height: 96px;
+  height: 14vh;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   margin: 16px 0 16px 0;
   color: black;
 
+
   img {
     height: 100%;
-    width: 136px;
+    width: 40%;
     object-fit: cover;
   }
 
@@ -25,21 +26,24 @@
   }
 
   .card-walk-infos {
-    padding: 6px;
-    justify-content: space-between;
+    padding: 10px;
     width: 100%;
     display: flex;
-    flex-direction: row;
-  }
-  .card-group-top {
-    margin-bottom: 24px;
-    text-align: left;
-  }
-  .card-group-bottom {
-    margin-top: 24px;
-    font-weight: 500;
-    display: flex;
     flex-direction: column;
+  }
+
+  .card-group-top {
+    text-align: left;
+    height: 50%;
+  }
+
+  .card-group-bottom {
+    font-weight: 500;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }
 
