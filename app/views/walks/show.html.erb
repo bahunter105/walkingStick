@@ -15,6 +15,12 @@
 </div>
 
 <p>
+  <%=link_to "/walks/#{@walk.id}/1" do%>
+    Start Walk!
+  <% end %>
+</p>
+
+<p>
   <%=link_to walks_path do%>
     Back to Walks Index page: <%= @walk.title %>
   <% end %>

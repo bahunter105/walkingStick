@@ -6,6 +6,13 @@
 <div>
   <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
 </div>
+
+<p>
+  <%=link_to "/walks/#{@walk.id}/#{@next_order_number}" do%>
+    Navigate to Next Landmark
+  <% end %>
+</p>
+
 <p>
   <%=link_to walk_path(@walk) do%>
     Back to Walk: <%= @walk.title %>

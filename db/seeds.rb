@@ -37,7 +37,7 @@ puts walk.title
 
 landmark = Landmark.new
 landmark.creator = user1
-landmark.title = 'Puerta De La Independencia'
+landmark.title = 'Puerta de la Independencia'
 landmark.latitude = '40.41980219794448'
 landmark.longitude = '-3.68813812508112'
 landmark.description = 'Main entrance door to the Retiro Park, it was built by the architect José Urioste y Velada, it has a lot of history since its pillars belonged to the old Casino de la Reina, it was bought and given by the City Council to Queen Isabel de Braganza. In its upper part we can see sculptures by Valeriano Salvatierra. It is made up of three openings, the central one being the widest.'
@@ -105,12 +105,12 @@ puts landmark.title
 wl = WalkLandmark.new
 wl.walk = walk
 wl.landmark = landmark
-wl.landmark_order_no = 3
+wl.landmark_order_no = 4
 wl.save
 
 landmark = Landmark.new
 landmark.creator = user1
-landmark.title = 'Casita Del Pescador'
+landmark.title = 'Casita del Pescador'
 landmark.latitude = '40.420711165978'
 landmark.longitude = '-3.6809420448805135'
 landmark.description = 'The Casita del Pescador is a small historical house, located in the northwest part of El Retiro Park in Madrid. It was in the beginning of the XIX century when this house was rebuilt by Fernando VII after the French invasion. The “Salón Persa” (Persian Hall) and the Casita del Pescador were restored and were renowned as “Los Caprichos” (The Caprices). The building was designed by Isidro González Velázquez so that the monarch and his friends could enjoy fishing days in a relaxed atmosphere.',
@@ -129,12 +129,12 @@ puts landmark.title
 wl = WalkLandmark.new
 wl.walk = walk
 wl.landmark = landmark
-wl.landmark_order_no = 4
+wl.landmark_order_no = 5
 wl.save
 
 landmark = Landmark.new
 landmark.creator = user1
-landmark.title = 'Estatua Del Angel Caido'
+landmark.title = 'Estatua del Angel Caido'
 landmark.latitude = '40.41115997729375'
 landmark.longitude = '-3.6825368025521836'
 landmark.description = 'The Estatua del Ángel Caído it’s a work designed in 1877 by the renowned Madrid sculptors Ricardo Bellver and Francisco Jareño. This impressive monument is located on top of a Chinese porcelain pedestal, which was destroyed after the Independence War. The statue, which represents the expulsion of the angel Lucifer to hell, is one of the most emblematic works of El Retiro Park in Madrid.',
@@ -153,7 +153,7 @@ puts landmark.title
 wl = WalkLandmark.new
 wl.walk = walk
 wl.landmark = landmark
-wl.landmark_order_no = 5
+wl.landmark_order_no = 3
 wl.save
 
 walk = Walk.create!(
