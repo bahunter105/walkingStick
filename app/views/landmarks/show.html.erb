@@ -4,10 +4,7 @@
   <%= cl_image_tag(@landmark.photo.key) %>
 </div>
 <div>
-
- <audio src="<%=cloudinary_url("development/test.mp3", :resource_type=>"video")%>" controls></audio>
- <audio src="https://res.cloudinary.com/dyo2a4d1n/video/upload/v1637827859/test.mp3" controls></audio>
- <%= cloudinary_url("development/test.mp3", :resource_type=>"video")%>
+  <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
 </div>
 <p>
   <%=link_to walk_path(@walk) do%>

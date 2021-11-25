@@ -7,5 +7,6 @@ class Landmark < ApplicationRecord
   has_many :ratings
   has_one_attached :photo
   has_one_attached :audio
+  has_one_attached :prearrival_audio
   validates :title, presence: true
 end
