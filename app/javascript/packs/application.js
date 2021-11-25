@@ -60,7 +60,7 @@ $('h1 a').children().each(function (i) {
 function randomImage() {
   var images = [
     '/assets/madrid.jpg',
-    '/assets/london.png',
+    '/assets/london.jpg',
     '/assets/amsterdam.jpg'];
   var size = images.length;
   var x = Math.floor(size * Math.random());

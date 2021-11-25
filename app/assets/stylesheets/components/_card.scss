@@ -4,7 +4,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
+  margin: 16px 0 16px 0;
+  color: black;
 
   img {
     height: 100%;
@@ -13,20 +14,36 @@
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    margin: 0;
+    margin-bottom: 2px;
   }
 
   p {
     font-size: 12px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
+    margin: 1px 0;
   }
 
   .card-walk-infos {
-    padding: 16px;
+    padding: 6px;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
   }
+  .card-group-top {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .card-group-bottom {
+    margin-top: 24px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.fa-star {
+  color: rgba($color: #e9d200, $alpha: 1.0);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
 }
