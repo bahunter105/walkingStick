@@ -46,16 +46,20 @@
   background-image: image-url("sally.jpg");
   background-size: cover;
   background-position: center;
+
   h1 {
     color: white;
     font-weight: bold;
     font-size: 44px;
+  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+
   }
   p {
     color: white;
     opacity: .8;
     font-size: 20px;
-    font-weight: lighter;
+    font-weight: 400;
     margin-bottom: 30px;
+    text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
   }
 }
