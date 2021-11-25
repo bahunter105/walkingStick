@@ -25,7 +25,7 @@ class WalksController < ApplicationController
 
   def navigate
     @walk = Walk.find(params[:walk_id])
-    @landmark = @walk.walk_landmarks.find_by(landmark_order_no: 1).landmark
+    @landmark = @walk.walk_landmarks.find_by(landmark_order_no: params[:landmark_order_no]).landmark
   end
 
   def start_navigate
