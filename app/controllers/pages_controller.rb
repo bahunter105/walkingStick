@@ -11,11 +11,4 @@ end
 
 
 
-class CompletedWalksController
-  def create
-    @walk = Walk.fin...
-    @user = current_user
-    CompletedWalk.create(user: @user, walk: @walk)
-    redirect_to dashboard_path
-  end
-end
+
