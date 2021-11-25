@@ -1,3 +1,5 @@
+<%= content_for(:navbar_class, "navbar-transparent") %>
+
 <h1> <%= @walk.title %> </h1>
 
 <%@walk.walk_landmarks.order(landmark_order_no: :asc).each do |walk_landmark|  %>
