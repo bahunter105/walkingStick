@@ -4,6 +4,7 @@
   <%= cl_image_tag(@landmark.photo.key) %>
 </div>
 <div>
+    <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
 </div>
 
 <p>
