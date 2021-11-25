@@ -4,12 +4,17 @@
   <%= cl_image_tag(@landmark.photo.key) %>
 </div>
 <div>
-  <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
 </div>
 
 <p>
-  <%=link_to "/walks/#{@walk.id}/#{@next_order_number}" do%>
-    Navigate to Next Landmark
+  <% if @next_order_number == 6 %>
+    <%=link_to user_path(current_user) do%>
+      Finish Your Walk
+    <% end %>
+  <% else %>
+    <%=link_to "/walks/#{@walk.id}/#{@next_order_number}" do%>
+      Navigate to Next Landmark
+    <% end %>
   <% end %>
 </p>
 
