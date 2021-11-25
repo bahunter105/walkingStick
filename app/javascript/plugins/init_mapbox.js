@@ -1,5 +1,5 @@
 import mapboxgl from 'mapbox-gl';
-import mapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+import mapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 
 const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
