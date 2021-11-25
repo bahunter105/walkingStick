@@ -3,4 +3,12 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @walk = current_user.completed_walks.last.walk
+  end
 end
+
+
+
+
