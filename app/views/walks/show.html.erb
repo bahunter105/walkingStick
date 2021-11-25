@@ -2,7 +2,7 @@
 
 <%@walk.walk_landmarks.order(landmark_order_no: :asc).each do |walk_landmark|  %>
   <h3>
-    <%=link_to walk_landmark_path(walk_landmark.walk, walk_landmark.landmark) do%>
+    <%=link_to walk_landmark_path(@walk, walk_landmark.landmark) do%>
       <%= walk_landmark.landmark_order_no%>. <%= walk_landmark.landmark.title %>
     <% end %>
   </h3>
