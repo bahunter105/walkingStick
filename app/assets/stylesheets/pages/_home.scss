@@ -1,1 +1,114 @@
-// Specific CSS for your home-page
+#banner-home {
+
+
+}
+
+.h1-home {
+  margin:0;
+  text-align:center;
+  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+  font-size: larger;
+  font-weight: 600;
+  margin: auto;
+}
+
+.p-home{
+  font-size:3em;
+  font-weight:100;
+  color: white;
+}
+.h1-home a {
+  color: #228381;
+  text-decoration:none;
+  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+  letter-spacing:0px;
+  font-size:2.25em;
+  text-align:center;
+}
+.h1-home a span{
+  opacity:0;
+}
+
+.fadeBounceIn{
+  -webkit-animation: myfirst .750s forwards;
+  -moz-animation: myfirst .750s forwards;
+  -o-animation: myfirst .750s forwards;
+  animation: myfirst .750s forwards;
+  position:relative;
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+  0% {
+    opacity:0;
+    top:30px;
+  }
+  50% {
+    opacity: .5;
+    top:-35px;
+  }
+  100% {
+    top:0;
+    opacity:1;
+  }
+}
+
+@-moz-keyframes myfirst /* Safari and Chrome */
+{
+  0% {
+    opacity:0;
+    top:30px;
+  }
+  50% {
+    opacity: .5;
+    top:-35px;
+  }
+  100% {
+    top:0;
+    opacity:1;
+  }
+}
+
+@-o-keyframes myfirst /* Safari and Chrome */
+{
+  0% {
+    opacity:0;
+    top:30px;
+  }
+  50% {
+    opacity: .5;
+    top:-35px;
+  }
+  100% {
+    top:0;
+    opacity:1;
+  }
+}
+
+@keyframes myfirst /* Safari and Chrome */
+{
+  0% {
+    opacity:0;
+    top:30px;
+  }
+  50% {
+    opacity: .5;
+    top:-35px;
+  }
+  100% {
+    top:0;
+    opacity:1;
+  }
+}
+
+.home-intro {
+  background-image: url("/assets/madrid.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 92vh;
+  background-position: left;
+  justify-content: start;
+  padding: 75px 0px 0px 75px;
+  justify-content: space-between;
+  align-items: center;
+}
