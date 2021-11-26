@@ -80,7 +80,8 @@ const initMapbox = () => {
       let markerLast = markers.pop()
       directions.setDestination([markerLast.lng, markerLast.lat])
       markers.forEach((marker) => {
-        directions.setWaypoint([marker.lng, marker.lat])
+        directions.setWaypoint(markers.indexOf(marker),[marker.lng, marker.lat])
+
       });
       map.addControl(directions, 'top-left');
     }
