@@ -28,6 +28,7 @@ walk = Walk.new(
   title: 'Retiro Walk Tour',
   description: 'This must see tour through one of Madrids most emblematic parks begins at the Puerta de la Independencia del Retiro.',
   category: category,
+  location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/retiro.jpg')
 walk.photo.attach(io: file, filename: 'retiro.jpg', content_type: 'image/img')
@@ -161,6 +162,7 @@ walk = Walk.create!(
   title: 'Palacio Real',
   description: 'A tour through the emblematic and majestic royal palace',
   category: category,
+  location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/palacio.png')
 landmark.photo.attach(io: file, filename: 'palacio.png', content_type: 'image/png')
@@ -173,6 +175,7 @@ walk = Walk.create!(
   title: 'Tapas Walking Tour',
   description: 'A tour with some the best tapas offered in Madrid',
   category: category,
+  location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/tapas.png')
 landmark.photo.attach(io: file, filename: 'tapas.png', content_type: 'image/png')
@@ -185,6 +188,7 @@ walk = Walk.create!(
   title: 'La Almudena Cathedral',
   description: 'A tour around one of the most beautiful of the Spanish capitals cathedrals',
   category: category,
+  location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/almudena.jpg')
 landmark.photo.attach(io: file, filename: 'almudena.jpg', content_type: 'image/image')
@@ -197,6 +201,7 @@ walk = Walk.create!(
   title: 'El Prado Museum',
   description: 'A tour around one of the most important museums...',
   category: category,
+  location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/prado.png')
 landmark.photo.attach(io: file, filename: 'prado.png', content_type: 'image/png')
