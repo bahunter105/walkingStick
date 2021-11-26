@@ -12,7 +12,10 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "We can create links here", "#", class: "nav-link" %>
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete%>
         </li>
         <!-- if we want to use user's avatar, enable the following>
         <li class="nav-item dropdown">
