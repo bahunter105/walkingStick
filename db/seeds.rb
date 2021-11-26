@@ -25,7 +25,7 @@ category.save
 
 walk = Walk.new(
   creator: user1,
-  title: 'Retiro Walk Tour',
+  title: 'Retiro Park',
   description: 'This must see tour through one of Madrids most emblematic parks begins at the Puerta de la Independencia del Retiro.',
   category: category,
   rating: rand(1..5))
@@ -170,7 +170,7 @@ puts walk.title
 
 walk = Walk.create!(
   creator: user1,
-  title: 'Tapas Walking Tour',
+  title: 'Tapas Walk',
   description: 'A tour with some the best tapas offered in Madrid',
   category: category,
   rating: rand(1..5))
@@ -194,7 +194,7 @@ puts walk.title
 
 walk = Walk.create!(
   creator: user1,
-  title: 'El Prado Museum',
+  title: 'Prado Museum',
   description: 'A tour around one of the most important museums...',
   category: category,
   rating: rand(1..5))
