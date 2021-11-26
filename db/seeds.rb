@@ -25,7 +25,7 @@ category.save
 
 walk = Walk.new(
   creator: user1,
-  title: 'Retiro Walk Tour',
+  title: 'Retiro Park',
   description: 'This must see tour through one of Madrids most emblematic parks begins at the Puerta de la Independencia del Retiro.',
   category: category,
   location: 'Madrid, Spain, España',
@@ -196,7 +196,7 @@ wl.save
 
 walk = Walk.create!(
   creator: user1,
-  title: 'Tapas Walking Tour',
+  title: 'Tapas Walk',
   description: 'A tour with some the best tapas offered in Madrid',
   category: category,
   location: 'Madrid, Spain, España',
