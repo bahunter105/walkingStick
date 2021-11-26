@@ -55,7 +55,9 @@ const initMapbox = () => {
         let directions = new mapboxDirections({
           accessToken: mapElement.dataset.mapboxApiKey,
           unit: 'metric',
-          profile: 'mapbox/walking'
+          profile: 'mapbox/walking',
+          controls: { instructions: true, profileSwitcher: false, inputs:false},
+          interactive: false
         });
         directions.setOrigin([markers[0].lng, markers[0].lat])
 
