@@ -55,10 +55,11 @@ const initMapbox = () => {
         let directions = new mapboxDirections({
           accessToken: mapElement.dataset.mapboxApiKey,
           unit: 'metric',
-          profile: 'mapbox/walking'
+          profile: 'mapbox/walking',
+          controls: { instructions: true, profileSwitcher: false, inputs:false},
+          interactive: false
         });
         directions.setOrigin([markers[0].lng, markers[0].lat])
-
         directions.setDestination([markers[1].lng, markers[1].lat])
         map.addControl(directions, 'top-left');
       })
@@ -67,6 +68,22 @@ const initMapbox = () => {
       map = buildMap(mapElement);
       addMarkersToMap(map, markers);
       fitMapToMarkers(map, markers);
+      let directions = new mapboxDirections({
+        accessToken: mapElement.dataset.mapboxApiKey,
+        unit: 'metric',
+        profile: 'mapbox/walking',
+        controls: { instructions: true, profileSwitcher: false, inputs:false},
+        interactive: false
+      });
+      let markerFirst = markers.shift()
+      directions.setOrigin([markerFirst.lng, markerFirst.lat])
+      let markerLast = markers.pop()
+      directions.setDestination([markerLast.lng, markerLast.lat])
+      markers.forEach((marker) => {
+        directions.setWaypoint(markers.indexOf(marker),[marker.lng, marker.lat])
+
+      });
+      map.addControl(directions, 'top-left');
     }
   }
 }
