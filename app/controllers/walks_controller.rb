@@ -1,6 +1,10 @@
 class WalksController < ApplicationController
   def index
-    @walks = Walk.all
+    if params[:search].present?
+      @walks = Walk.global_search(params[:search][:query])
+    else
+      @walks = Walk.all
+    end
   end
 
   def show
