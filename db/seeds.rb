@@ -11,7 +11,7 @@ puts "Creating Walks and Users"
 user1 = User.new
 # user1.first_name = 'Sally'
 # user1.last_name = 'Secret'
-user1.email = 'user1@timepeek.com'
+user1.email = 'user1@walkingstick.com'
 user1.password = '123456'
 # user1.password_confirmation = '123456'
 # user1.encrypted_password = '123456'
@@ -168,6 +168,30 @@ walk.creator = user1
 walk.save
 puts walk.title
 
+landmark = Landmark.new
+landmark.creator = user1
+landmark.title = 'Teatro Real'
+landmark.latitude = '40.418985125155395'
+landmark.longitude = '-3.710492169317648'
+landmark.description = 'majestic first stop on the tour is the never dissapointing view of the main entrance of the Teatro Real de Madrid...'
+file = File.open('app/assets/images/opera.png')
+landmark.photo.attach(io: file, filename: 'opera.png', content_type: 'image/png')
+landmark.creator = user1
+landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
+
+wl = WalkLandmark.new
+wl.walk = walk
+wl.landmark = landmark
+wl.landmark_order_no = 1
+wl.save
+
 walk = Walk.create!(
   creator: user1,
   title: 'Tapas Walking Tour',
@@ -180,6 +204,30 @@ walk.creator = user1
 walk.save
 puts walk.title
 
+landmark = Landmark.new
+landmark.creator = user1
+landmark.title = 'Tapas & Mas'
+landmark.latitude = '40.415912962717464'
+landmark.longitude = '-3.7022579539580915'
+landmark.description = 'After so much walking is there anything better than taking a breather and taking in a different kind of experience? with this walk you will be able to do just that by getting a chance to try some of the highest rated tapas in Madrid.'
+file = File.open('app/assets/images/tapasbar.png')
+landmark.photo.attach(io: file, filename: 'tapasbar.png', content_type: 'image/png')
+landmark.creator = user1
+landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
+
+wl = WalkLandmark.new
+wl.walk = walk
+wl.landmark = landmark
+wl.landmark_order_no = 1
+wl.save
+
 walk = Walk.create!(
   creator: user1,
   title: 'La Almudena Cathedral',
@@ -187,15 +235,39 @@ walk = Walk.create!(
   category: category,
   rating: rand(1..5))
 file = File.open('app/assets/images/almudena.jpg')
-landmark.photo.attach(io: file, filename: 'almudena.jpg', content_type: 'image/image')
+landmark.photo.attach(io: file, filename: 'almudena.jpg', content_type: 'image/jpg')
 walk.creator = user1
 walk.save
 puts walk.title
 
+landmark = Landmark.new
+landmark.creator = user1
+landmark.title = 'Entrada a la Catedral'
+landmark.latitude = '40.41614110939957'
+landmark.longitude = '-3.7144661693176473'
+landmark.description = 'Almudena Cathedral is a Catholic church in Madrid, Spain. It is the seat of the Roman Catholic Archdiocese of Madrid. The cathedral was consecrated by Pope John Paul II in 1993.'
+file = File.open('app/assets/images/almudenagate.jpg')
+landmark.photo.attach(io: file, filename: 'almudena.jpg', content_type: 'image/jpg')
+landmark.creator = user1
+landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
+
+wl = WalkLandmark.new
+wl.walk = walk
+wl.landmark = landmark
+wl.landmark_order_no = 1
+wl.save
+
 walk = Walk.create!(
   creator: user1,
   title: 'El Prado Museum',
-  description: 'A tour around one of the most important museums...',
+  description: 'The Prado Museum, officially known as Museo Nacional del Prado, is the main Spanish national art museum, located in central Madrid.',
   category: category,
   rating: rand(1..5))
 file = File.open('app/assets/images/prado.png')
@@ -203,3 +275,27 @@ landmark.photo.attach(io: file, filename: 'prado.png', content_type: 'image/png'
 walk.creator = user1
 walk.save
 puts walk.title
+
+landmark = Landmark.new
+landmark.creator = user1
+landmark.title = 'Entrada el Prado'
+landmark.latitude = '40.41614110939957'
+landmark.longitude = '-3.7144661693176473'
+landmark.description = 'A prime view of the old entrance to the museum is where we begin our amazing walk through...'
+file = File.open('app/assets/images/elprado.png')
+landmark.photo.attach(io: file, filename: 'elprado.png', content_type: 'image/jpg')
+landmark.creator = user1
+landmark.save
+puts "photo saved"
+audio = File.open('app/assets/images/test.mp3')
+landmark.audio.attach(io: audio, filename: "audio.mp3", content_type: "video/mp3")
+prearrival_audio = File.open('app/assets/images/test.mp3')
+landmark.prearrival_audio.attach(io: prearrival_audio, filename: "audio.mp3", content_type: "video/mp3")
+landmark.save
+puts landmark.title
+
+wl = WalkLandmark.new
+wl.walk = walk
+wl.landmark = landmark
+wl.landmark_order_no =
+wl.save
