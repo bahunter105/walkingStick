@@ -6,4 +6,14 @@ class Walk < ApplicationRecord
   has_many :walk_landmarks
   has_many :landmarks, through: :walk_landmarks
   has_one_attached :photo
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :title ],
+    associated_against: {
+      category: [ :name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end
