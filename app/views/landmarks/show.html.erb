@@ -1,26 +1,34 @@
-<h1> <%= @landmark.title %> </h1>
+<%= content_for(:navbar_class, "navbar-transparent") %>
 
-<div class='banner-small'>
-  <%= cl_image_tag(@landmark.photo.key) %>
+<div class="banner-small" style="background-image: url('<%= cl_image_path@landmark.photo.key %>')">
+  <div class="banner-container-small">
+    <h2><%= @landmark.title %></h2>
+  </div>
 </div>
 
-<div>
-<audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
+<div class="audio-display">
+  <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
 </div>
+
+<div class="show-text">
+  <p><%= @landmark.description %></p>
+  <h6><strong>Created by <%= @landmark.creator.email %></strong></h6>
+</div>
+
 <p>
   <% if @next_order_number == 6 %>
     <%=link_to user_path(current_user) do%>
-      Finish Your Walk
+      <a class="btn btn-gradient" href="#">Finish Your Walk</a>
     <% end %>
   <% else %>
     <%=link_to "/walks/#{@walk.id}/#{@next_order_number}" do%>
-      Navigate to Next Landmark
+      <a class="btn btn-gradient" href="#">Next Landmark</a>
     <% end %>
   <% end %>
 </p>
 
 <p>
   <%=link_to walk_path(@walk) do%>
-    Back to Walk: <%= @walk.title %>
+    <a class="btn btn-gradient" href="#">Back <%= @walk.title %></a>
   <% end %>
 </p>
