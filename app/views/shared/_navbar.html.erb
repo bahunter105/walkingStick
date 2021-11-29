@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= yield(:navbar_class) %>">
+<div class="navbar navbar navbar-light navbar-lewagon <%= yield(:navbar_class) %>">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,10 +9,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "navlink-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+          <%= link_to "Dashboard", dashboard_path, class: "navlink-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete%>
