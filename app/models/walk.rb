@@ -16,4 +16,9 @@ class Walk < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def blank_stars
+    5 - rating.to_i
+  end
+
 end

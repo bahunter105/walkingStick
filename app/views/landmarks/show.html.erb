@@ -15,6 +15,16 @@
   <h6><strong>Created by <%= @landmark.creator.email %></strong></h6>
 </div>
 
+<div>
+  <p><strong>Landmark rating</strong>
+  <% @walk.rating.to_i.times do %>
+    <span class="fas fa-star"></span>
+  <% end %>
+  <% @walk.blank_stars.times do %>
+    <span class="far fa-star"></span>
+  <% end %></p>
+</div>
+
 <p>
   <% if @next_order_number == 6 %>
       <a class="btn btn-gradient" href="<%= user_path(current_user)%>">Finish Your Walk</a>
