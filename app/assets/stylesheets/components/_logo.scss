@@ -1,0 +1,20 @@
+#stick_logo {
+	transform: rotate(-15deg);
+  -webkit-filter: drop-shadow(2px 2px 3px #666666);
+}
+
+#walking_tx_logo {
+	position: relative;
+	left: 55px;
+	font-size: 55px;
+	top: 7px;
+  color:$primary
+}
+
+#stick_tx_logo {
+	position: relative;
+	left: -60px;
+	font-size: 55px;
+	top: 4px;
+  color:$primary
+}
