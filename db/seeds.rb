@@ -165,7 +165,7 @@ walk = Walk.create!(
   location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/palacio.png')
-landmark.photo.attach(io: file, filename: 'palacio.png', content_type: 'image/png')
+walk.photo.attach(io: file, filename: 'palacio.png', content_type: 'image/png')
 walk.creator = user1
 walk.save
 puts walk.title
@@ -202,7 +202,7 @@ walk = Walk.create!(
   location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/tapas.png')
-landmark.photo.attach(io: file, filename: 'tapas.png', content_type: 'image/png')
+walk.photo.attach(io: file, filename: 'tapas.png', content_type: 'image/png')
 walk.creator = user1
 walk.save
 puts walk.title
@@ -239,7 +239,7 @@ walk = Walk.create!(
   location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/almudena.jpg')
-landmark.photo.attach(io: file, filename: 'almudena.jpg', content_type: 'image/jpg')
+walk.photo.attach(io: file, filename: 'almudena.jpg', content_type: 'image/jpg')
 walk.creator = user1
 walk.save
 puts walk.title
@@ -276,7 +276,7 @@ walk = Walk.create!(
   location: 'Madrid, Spain, España',
   rating: rand(1..5))
 file = File.open('app/assets/images/prado.png')
-landmark.photo.attach(io: file, filename: 'prado.png', content_type: 'image/png')
+walk.photo.attach(io: file, filename: 'prado.png', content_type: 'image/png')
 walk.creator = user1
 walk.save
 puts walk.title

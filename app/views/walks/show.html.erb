@@ -1,6 +1,6 @@
 <%= content_for(:navbar_class, "navbar-transparent") %>
 
-<div class="banner-small" style="background-image: url(https://madridfoodtour.com/wp-content/uploads/retiro-overhead-U-scaled.jpeg);">
+<div class="banner-small" style="background-image: url(<%= cl_image_path @walk.photo.key%>)">
   <div class="banner-container-small">
     <h2><%= @walk.title %></h2>
   </div>
