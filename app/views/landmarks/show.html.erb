@@ -1,6 +1,6 @@
 <%= content_for(:navbar_class, "navbar-transparent") %>
 
-<div class="banner-small" style="background-image: url('<%= cl_image_path@landmark.photo.key %>')">
+<div class="banner-small" style="background-image: url(<%=cl_image_path @landmark.photo.key%>)">
   <div class="banner-container-small">
     <h2><%= @landmark.title %></h2>
   </div>
@@ -13,6 +13,16 @@
 <div class="show-text">
   <p><%= @landmark.description %></p>
   <h6><strong>Created by <%= @landmark.creator.email %></strong></h6>
+</div>
+
+<div>
+  <p><strong>Landmark rating</strong>
+  <% @walk.rating.to_i.times do %>
+    <span class="fas fa-star"></span>
+  <% end %>
+  <% @walk.blank_stars.times do %>
+    <span class="far fa-star"></span>
+  <% end %></p>
 </div>
 
 <p>

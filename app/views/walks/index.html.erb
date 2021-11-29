@@ -2,12 +2,13 @@
 
 <div class="banner" style="background-image: url(https://madridfoodtour.com/wp-content/uploads/retiro-overhead-U-scaled.jpeg);">
   <div class="banner-container">
-    <h1>Madrid</h1>
-    <h3>Walking Tours</h3>
+    <div>
+      <h1>Madrid</h1>
+      <h3>Walking Tours</h3>
+    </div>
+    <%= render 'shared/search_form' %>
   </div>
 </div>
-
-<%= render 'shared/search_form' %>
 
 <% @walks.each do |walk| %>
   <%= link_to walk_path(walk) do %>
@@ -21,7 +22,14 @@
       <div class="card-walk-infos">
         <div class="card-group-top">
           <h2><%= walk.title %></h2>
-          <p><i class="fas fa-star"></i><%= walk.rating.to_f %></p>
+          <p>
+            <% walk.rating.to_i.times do %>
+              <span class="fas fa-star"></span>
+            <% end %>
+            <% walk.blank_stars.times do %>
+              <span class="far fa-star"></span>
+            <% end %>
+          </p>
         </div>
         <div class="card-group-bottom">
           <div class="text-left">
