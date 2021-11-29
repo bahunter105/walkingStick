@@ -1,8 +1,32 @@
-.mapboxgl-popup {
-  max-width: 200px;
-}
+#map {
+  align-items: center;
+  height: 80vh;
+  width: 100%;
 
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  .mapboxgl-ctrl-top-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .mapboxgl-ctrl {
+      margin: 0;
+    }
+  }
+
+  .mapbox-directions-instructions {
+    overflow: visible;
+  }
+
+  .mapbox-directions-instructions-wrapper {
+    max-height: 10vh;
+    max-width: 100vh;
+    text-align: center;
+  }
+
+  .mapbox-directions-route-summary {
+    background-color: $walkingstick-green;
+  }
+  .directions-control.directions-control-directions {
+    background: #c44536;
+  }
 }
