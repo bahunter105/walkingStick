@@ -16,7 +16,14 @@
       <div class="card-walk-infos">
         <div class="card-group-top">
           <h2><%= walk.title %></h2>
-          <p><i class="fas fa-star"></i><%= walk.rating.to_f %></p>
+          <p>
+            <% walk.rating.to_i.times do %>
+              <span class="fas fa-star"></span>
+            <% end %>
+            <% walk.blank_stars.times do %>
+              <span class="far fa-star"></span>
+            <% end %>
+          </p>
         </div>
         <div class="card-group-bottom">
           <div class="text-left">
