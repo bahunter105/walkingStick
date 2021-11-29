@@ -1,6 +1,6 @@
 <%= content_for(:navbar_class, "navbar-transparent") %>
 
-<div class="banner-small" style="background-image: url('<%= cl_image_path@landmark.photo.key %>')">
+<div class="banner-small" style="background-image: url(<%=cl_image_path @landmark.photo.key%>)">
   <div class="banner-container-small">
     <h2><%= @landmark.title %></h2>
   </div>
