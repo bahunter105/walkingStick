@@ -138,7 +138,7 @@ landmark.creator = user1
 landmark.title = 'Estatua del Angel Caido'
 landmark.latitude = '40.41115997729375'
 landmark.longitude = '-3.6825368025521836'
-landmark.description = 'The Estatua del Ángel Caído it’s a work designed in 1877 by the renowned Madrid sculptors Ricardo Bellver and Francisco Jareño. This impressive monument is located on top of a Chinese porcelain pedestal, which was destroyed after the Independence War. The statue, which represents the expulsion of the angel Lucifer to hell, is one of the most emblematic works of El Retiro Park in Madrid.',
+landmark.description = 'The Estatua del Ángel Caído it’s a work designed in 1877 by the renowned Madrid sculptors Ricardo Bellver and Francisco Jareño. This impressive monument is located on top of a Chinese porcelain pedestal, which was destroyed after the Independence War. The statue, which represents the expulsion of the angel Lucifer to hell, is one of the most emblematic works of El Retiro Park in Madrid.'
 file = File.open('app/assets/images/angel.png')
 landmark.photo.attach(io: file, filename: 'angel.png', content_type: 'image/png')
 landmark.creator = user1
