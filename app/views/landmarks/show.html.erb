@@ -17,18 +17,12 @@
 
 <p>
   <% if @next_order_number == 6 %>
-    <%=link_to user_path(current_user) do%>
-      <a class="btn btn-gradient" href="#">Finish Your Walk</a>
-    <% end %>
+      <a class="btn btn-gradient" href="<%= user_path(current_user)%>">Finish Your Walk</a>
   <% else %>
-    <%=link_to "/walks/#{@walk.id}/#{@next_order_number}" do%>
-      <a class="btn btn-gradient" href="#">Next Landmark</a>
-    <% end %>
+      <a class="btn btn-gradient" href=<%="/walks/#{@walk.id}/#{@next_order_number}" %>>Next Landmark</a>
   <% end %>
 </p>
 
 <p>
-  <%=link_to walk_path(@walk) do%>
-    <a class="btn btn-gradient" href="#">Back <%= @walk.title %></a>
-  <% end %>
+  <a class="btn btn-gradient" href="<%= walk_path(@walk)%>">Back <%= @walk.title %></a>
 </p>

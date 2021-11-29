@@ -46,13 +46,9 @@
 
 
 <p>
-  <%= link_to "/walks/#{@walk.id}/1" do%>
-    <a class="btn btn-gradient" href="#">Start Walk!</a>
-  <% end %>
+    <a class="btn btn-gradient" href= <%="/walks/#{@walk.id}/1"%>>Start Walk!</a>
 </p>
 
 <p>
-  <%=link_to walks_path do%>
-    <a class="btn btn-gradient" href="#">Back to <%= @walk.title %></a>
-  <% end %>
+  <a class="btn btn-gradient" href="<%= walks_path %>">Back to <%= @walk.title %></a>
 </p>
