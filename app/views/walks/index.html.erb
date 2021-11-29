@@ -2,21 +2,34 @@
 
 <div class="banner" style="background-image: url(https://madridfoodtour.com/wp-content/uploads/retiro-overhead-U-scaled.jpeg);">
   <div class="banner-container">
-    <h1>Madrid</h1>
-    <h3>Walking Tours</h3>
+    <div>
+      <h1>Madrid</h1>
+      <h3>Walking Tours</h3>
+    </div>
+    <%= render 'shared/search_form' %>
   </div>
 </div>
-
-<%= render 'shared/search_form' %>
 
 <% @walks.each do |walk| %>
   <%= link_to walk_path(walk) do %>
     <div class="card-walk">
-      <%= image_tag "puerta_retiro.png", alt: "Retiro" %>
+      <% if walk.photo.attached?%>
+        <%=cl_image_tag walk.photo.key%>
+      <%else%>
+        <img src="https://images.unsplash.com/photo-1604998103924-89e012e5265a?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&ixlib=rb-1.2.1&w=1000&q=80">
+      <%end%>
+
       <div class="card-walk-infos">
         <div class="card-group-top">
           <h2><%= walk.title %></h2>
-          <p><i class="fas fa-star"></i><%= walk.rating.to_f %></p>
+          <p>
+            <% walk.rating.to_i.times do %>
+              <span class="fas fa-star"></span>
+            <% end %>
+            <% walk.blank_stars.times do %>
+              <span class="far fa-star"></span>
+            <% end %>
+          </p>
         </div>
         <div class="card-group-bottom">
           <div class="text-left">

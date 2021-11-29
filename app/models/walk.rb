@@ -48,4 +48,9 @@ class Walk < ApplicationRecord
   def distance_to_km
     self.distance.to_f / 1000
   end
+
+  def blank_stars
+    5 - rating.to_i
+  end
+
 end
