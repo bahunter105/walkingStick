@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @walks = Walk.all
+    @random_walks = @walks.sample(2)
   end
 
-  def walk
-  end
+
 end
