@@ -7,8 +7,8 @@
 </div>
 
 <div class="show-text">
-  <h6><strong>Created by Micky Mouce</strong></h6>
-  <p>This walk is awesome. I will walk you through Retiro park and show you some of my favorite places!</p>
+  <h6>Created by: <%= @walk.creator.username %></h6>
+  <p><%= @walk.description %></p>
 </div>
 
 <div id="map"
@@ -37,14 +37,14 @@
               <% end %>
           </p>
         </div>
-        <div class="card-group-bottom">
-          <div class="text-left">
-            <p>Creater</p>
-          </div>
+        <%# <div class="card-group-bottom">
+          <div class="text-left"> %>
+            <%# <p> <%=walk_landmark.landmark.creator.email</p> %>
+          <%# </div>
           <div class="text-right">
             <p>Distance</p>
             <p>Time</p>
-          </div>
+          </div> %>
         </div>
       </div>
     </div>
@@ -57,5 +57,5 @@
 </p>
 
 <p>
-  <a class="btn btn-gradient" href="<%= walks_path %>">Back to <%= @walk.title %></a>
+  <a class="btn btn-gradient" href="<%= walks_path %>">Back to Walks</a>
 </p>
