@@ -7,7 +7,6 @@
   margin: 16px 0 16px 0;
   color: black;
 
-
   img {
     height: 100%;
     width: 40%;
@@ -47,11 +46,14 @@
   }
 }
 
+//------------------------------
+
 .fa-star {
   color: rgba($color: #FAB12D, $alpha: 1.0);
   text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
 }
 
+//------------------------------
 
 .card-trip {
   overflow: hidden;
@@ -78,7 +80,6 @@
   margin: 0;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -92,4 +93,101 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+//--------------------------------------
+
+.card-home-green-girl {
+  background-image: url('girl_green.jpg');
+  height: 58vh;
+  width: 90vw;
+  margin: auto;
+  border-radius: 46px;
+  position: absolute;
+  top: 97vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+}
+
+.card-home-green-girl__text{
+  height: 12vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h5{
+    margin: 0;
+    padding: 40px;
+  }
+}
+
+//--------------------------------------
+
+.card-home-man {
+  background-image: url('man_brown.jpg');
+  height: 40vh;
+  width: 90vw;
+  margin: auto;
+  border-radius: 46px;
+  position: absolute;
+  top: 157vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+}
+
+.card-home-man__text {
+  height: 40vh;
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 6vw;
+  margin-top: 22vh;
+
+  h5 {
+    margin: 0
+  }
+
+  p {
+    padding: 0 80px 0 0;
+  }
+}
+
+//--------------------------------------
+
+.card-home-red-girl {
+  background-image: url('girl_red.jpg');
+  height: 40vh;
+  width: 90vw;
+  margin: auto;
+  border-radius: 46px;
+  position: absolute;
+  top: 199vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+}
+
+.card-home-red-girl__text {
+  height: 40vh;
+  display:flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 6vw;
+  margin-top: 2vh;
+
+  h5 {
+    margin: 0
+  }
+
+  p {
+    padding: 0 0 0 80px;
+  }
 }

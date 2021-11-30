@@ -1,20 +1,32 @@
 <%= content_for(:navbar_class, "navbar-transparent") %>
 
-<div class="banner-home">
-  <div class="banner-home-content text-center">
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            <h1 id="walking_tx_logo">walking</h1>
-            <div height="120" class="self-align-center" id="stick_logo">
-              <%= image_tag 'noun_stick_80345.png' %>
-            </div>
-            <h1 class="align-self-end" id="stick_tx_logo">stick</h1>
-        </div>
+<body style="background-color: #ffbc42;">
+  <div class="banner-home">
+    <div class="banner-congtainer">
+      <div class="banner-home-content text-center">
+        <h1>walking/stick</h1>
+        <p>Walking Tours Reimagined</p>
+        <%= render 'shared/search_form' %>
+      </div>
     </div>
-    <p>Walking Tours Reimagined</p>
-    <p>Free Walking Tours Meets Podcasts!</p>
-    <div class="d-flex justify-content-center">
-      <%= render 'shared/search_form' %>
-    </div>
+  </div>
+
+<div class="card-home-green-girl">
+  <div class="card-home-green-girl__text">
+    <h5>Free Walking Tours Meets Podcasts!</h5>
+  </div>
+</div>
+
+<div class="card-home-man">
+  <div class="card-home-man__text">
+    <h5>Walk</h5>
+    <p>Walking tours created by top city guides.</p>
+  </div>
+</div>
+
+<div class="card-home-red-girl">
+  <div class="card-home-red-girl__text">
+    <h5>Listen</h5>
+    <p>Audioguides for full tour immersion.</p>
   </div>
 </div>
