@@ -31,14 +31,15 @@ import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { mapDisplayOff } from '../components/map_display_off';
+import { navbarShiz } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
   mapDisplayOff();
+  navbarShiz();
 });
 
 //
 // CSS
 // internal imports
-

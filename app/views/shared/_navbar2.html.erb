@@ -1,0 +1,28 @@
+
+<%= content_for(:navbar_class, "navbar-transparent") %>
+<div class="screen">
+  <div class="navbar">
+  </div>
+  <div class="list">
+    <div class="circle">
+    </div>
+    <div class="menu">
+      <ul>
+          <li><a href="<%=dashboard_path%>">Trick</a></li>
+        <li><%= link_to "Walks", walks_path%></li>
+        <li><%= link_to "Log In", new_user_session_path%></li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete%></li>
+
+      </ul>
+    </div>
+    <div class="burger">
+      <div class="x">
+      </div>
+      <div class="y">
+      </div>
+      <div class="z">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
