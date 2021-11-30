@@ -1,22 +1,24 @@
 <% @map_api_url%>
 <% ENV['MAPBOX_API_KEY'] %>
 <div>
-  <div class="overall_map_container">
+  <div class="map_container">
     <button type="button" class="btn bg-light btn-sm" id="nav_btn"><i class="fas fa-directions text-secondary"></i></button>
-    <div class="map_container">
       <div id="map"
         data-markers="<%= @markers.to_json %>"
         data-need-user-marker="true"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>
-</div>
+  </div>
 </div>
 
 
-<div>
-  <audio src="<%=cloudinary_url(@landmark.prearrival_audio.key, :resource_type=>"video")%>" controls></audio>
-</div>
+  <% if @landmark.prearrival_audio.attached?%>
+  <div>
+
+    <p>Listen to the introduction:</p>
+    <audio src="<%=cloudinary_url(@landmark.prearrival_audio.key, :resource_type=>"video")%>" controls></audio>
+  </div>
+  <%end%>
 
 <p>
   <a class="btn btn-gradient" href= "<%= walk_landmark_path(@walk, @landmark) %>">I have arrived!</a>

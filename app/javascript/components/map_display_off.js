@@ -2,13 +2,9 @@
 
 
 const mapDisplayOff = () => {
-  const display = document.querySelector(".mapboxgl-ctrl-directions")
-  const step = document.querySelector(".mapbox-directions-step");
-  if (display) {
-    console.log('true');
-    step.addEventListener('mouseover', function () {
-    });
-
+  let directionPopup = document.querySelector(".mapboxgl-ctrl-directions")
+  let step = document.querySelector(".mapbox-directions-step");
+  if (directionPopup) {
     var event = new MouseEvent('mouseover', {
       'view': window,
       'bubbles': true,
@@ -17,7 +13,7 @@ const mapDisplayOff = () => {
 
     step.dispatchEvent(event);
 
-    display.style.display = "none";
+    // directionPopup.style.directionPopup = "none";
   }
 }
 
