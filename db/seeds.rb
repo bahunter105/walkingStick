@@ -200,7 +200,7 @@ walk = Walk.create!(
   description: 'A tour with some the best tapas offered in Madrid',
   category: category,
   location: 'Madrid, Spain, España',
-  rating: rand(1..5))
+  rating: rand(4..5))
 file = File.open('app/assets/images/tapas.png')
 walk.photo.attach(io: file, filename: 'tapas.png', content_type: 'image/png')
 walk.creator = user1
