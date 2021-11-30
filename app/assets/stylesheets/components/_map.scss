@@ -30,3 +30,14 @@
     background: #c44536;
   }
 }
+
+.map_container {
+  position: relative;
+}
+
+#nav_btn {
+  position: absolute;
+  top: 12px;
+  z-index: 100;
+  right: 38px;
+}
