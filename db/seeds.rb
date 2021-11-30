@@ -32,7 +32,7 @@ walk = Walk.new(
   rating: rand(4..5))
 file = File.open('app/assets/images/retiro.jpg')
 walk.photo.attach(io: file, filename: 'retiro.jpg', content_type: 'image/img')
-walk.distance = 3100
+walk.distance = 2390
 walk.creator = user1
 walk.save
 puts walk.title

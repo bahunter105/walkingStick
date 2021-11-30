@@ -12,18 +12,36 @@
 </div>
 
 
-  <% if @landmark.prearrival_audio.attached?%>
-  <div>
 
-    <p>Listen to the introduction:</p>
-    <audio src="<%=cloudinary_url(@landmark.prearrival_audio.key, :resource_type=>"video")%>" controls></audio>
-  </div>
-  <%end%>
+ <div class="card-walk">
+      <%= cl_image_tag(@landmark.photo.key) %>
+      <div class="card-walk-infos">
+        <div class="card-group-top">
+          <h2><%= @landmark.title %></h2>
+          <p>
+            <% @walk.rating.to_i.times do  %>
+              <span class="fas fa-star"></span>
+            <% end %>
+            <% @walk.blank_stars.times do %>
+              <span class="far fa-star"></span>
+              <% end %>
+          </p>
+          <% if @landmark.prearrival_audio.attached?%>
+          <div>
+            <p>Listen to the introduction:</p>
+            <audio style="width: 230px; height:30px;" src="<%=cloudinary_url(@landmark.prearrival_audio.key, :resource_type=>"video")%>" controls></audio>
+          </div>
+        <%end %>
+        </div>
+
+        </div>
+      </div>
+    </div>
 
 <p>
   <a class="btn btn-gradient" href= "<%= walk_landmark_path(@walk, @landmark) %>">I have arrived!</a>
 </p>
 
 <p>
-  <a class="btn btn-gradient" href="<%= walks_path %>">Back to <%= @walk.title %></a>
+  <a class="btn btn-gradient" href="<%= walk_path(@walk) %>">Back to <%= @walk.title %></a>
 </p>

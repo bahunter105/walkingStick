@@ -36,7 +36,7 @@ import { mapDisplayToggle } from '../components/map_display_toggle';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
-  mapDisplayOff();
+  // mapDisplayOff();
   mapDisplayToggle();
 });
 
