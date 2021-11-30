@@ -9,7 +9,7 @@ User.destroy_all
 puts "Creating Walks and Users"
 
 user1 = User.new
-# user1.username = 'SallyS'
+user1.username = 'SallyS'
 # user1.last_name = 'Secret'
 user1.email = 'Sally.Secret@walkingstick.com'
 user1.password = '123456'
@@ -168,6 +168,7 @@ walk = Walk.create!(
 file = File.open('app/assets/images/palacio.png')
 walk.photo.attach(io: file, filename: 'palacio.png', content_type: 'image/png')
 walk.creator = user1
+walk.distance = 2600
 walk.save
 puts walk.title
 

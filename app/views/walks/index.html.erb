@@ -22,10 +22,10 @@
       <div class="card-trip-infos">
         <div class= 'd-flex align-items-start flex-column'>
           <h2><%= walk.title %></h2>
-          <p><%= walk.creator.email %></p>
+          <p><%= walk.creator.username %></p>
         </div>
         <div>
-          <p>Distance</p>
+          <p>Distance <%=walk.distance.distance_to_km%></p>
           <p>
             <% walk.rating.to_i.times do %>
               <span class="fas fa-star"></span>
