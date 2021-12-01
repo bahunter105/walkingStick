@@ -31,6 +31,14 @@ body {
   }
 }
 
+// .page-container {
+//  min-height: 100vh;
+// }
+
 .page-container {
- min-height: 100vh;
+  min-height: 100vh;
+  // position: absolute;
+  top: 0;
+  width: 100vw;
+  overflow: hidden;
 }
