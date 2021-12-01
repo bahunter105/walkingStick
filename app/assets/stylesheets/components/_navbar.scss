@@ -1,59 +1,122 @@
-.navbar-lewagon {
-  position: absolute;
-  width: 100%;
-  box-shadow: none;
-  margin-top: 8px;
-  text-align: left;
-  z-index: 100;
-  .navbar-wagon-link {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-  }
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+@keyframes checked-anim {
+    50% {
+        width: 3000px;
+        height: 3000px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+@keyframes not-checked-anim {
+    0% {
+        width: 3000px;
+        height: 3000px;
+    }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
 
-.navbar-transparent {
-  position: absolute;
-  width: 100%;
-  background: transparent;
-  box-shadow: none;
-  text-align: left;
-  .navbar-transparent-link {
-    color: white;
-    font-weight: bold;
-  }
-}
 
-.navbar-transparent .navbar-collapse {
-  flex-grow: 0;
-}
-
-button.navbar-toggler {
-	background-color: rgba(255, 255, 255, .15);
-}
-
-#navbarSupportedContent {
-	background-color: rgba(255, 255, 255, .3);
-	/* border-color: black; */
-	border-color: rgba(0, 0, 0, 0.1);
-	padding-left: 5px;
-	margin-top: 6px;
-}
-
-.navlink-link{
-  color: #218380;
+#menu, .nav-li, .nav-a {
+  margin: 75px 0 -55px 0;
+  color: #228381;
+  font: 14pt "Roboto", sans-serif;
+  font-weight: 200;
   text-decoration: none;
-  background-color: transparent;
+  text-transform: none;
+  list-style: none;
+  outline: 0;
+  display: none;
 }
 
-.navlink-link:hover {
-  color: #124644;
-  text-decoration: underline;
+#menu, .nav-li {
+  width: 268px;
+  margin-left: 33px;
+  text-indent: 37px;
+}
+#menu, .nav-a:focus {
+  display: block;
+  color: #333;
+  background-color: #eee;
+  transition: all .5s;
 }
 
-.nav-item{
-  padding: 8px 0px 8px 0;
+#menu, .nav-a#navbar__link-name{
+  color: white;
+  font-size: 27px;
+  height: 47px;
+  padding: 30px;
+}
+
+
+#trigger, #burger, #burger:before, #burger:after {
+    position: absolute;
+    top: 19px;
+    left: 14px;
+    background: white;
+    width: 30px;
+    height: 2px;
+    transition: .2s ease;
+    cursor: pointer;
+    z-index: 2;
+}
+#trigger {
+    height: 25px;
+    background: none;
+    z-index: 3;
+}
+#burger:before {
+    content: " ";
+    top: 10px;
+    left: 0;
+}
+#burger:after {
+    content: " ";
+    top: 20px;
+    left: 0;
+}
+#menu-toggle:checked + #trigger + #burger {
+    top: 35px;
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+}
+
+#menu-toggle:checked + #trigger + #burger:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu-toggle:checked + #trigger + #burger:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu {
+    position: absolute;
+    margin: 0; padding: 0;
+    width: 65px;
+    height: 74px;
+    background-color: #228381;;
+    border-bottom-right-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    animation: not-checked-anim .2s both;
+    transition: .2s;
+    z-index: 1;
+    top: 0;
+}
+#menu-toggle:checked + #trigger + #burger + #menu {
+    animation: checked-anim 1s ease both;
+}
+#menu-toggle:checked + #trigger ~ #menu > .nav-li, .nav-a {
+    display: block;
+}
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    display: none;
 }
