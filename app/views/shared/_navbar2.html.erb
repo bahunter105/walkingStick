@@ -4,7 +4,9 @@
   <ul id="menu">
     <li id='navbar__link'><a href="/" id='navbar__link-name'>Home</a></li>
     <% if user_signed_in? %>
-    <li id='navbar__link'><%= link_to "Log Out", destroy_user_session_path, method: :delete, id:"navbar__link-name" %></li>
+    <li id='navbar__link'>
+      <%= link_to "Log Out", destroy_user_session_path, id:"navbar__link-name" %>
+    </li>
     <% else %>
     <li id='navbar__link'><%= link_to "Log In", new_user_session_path, id:"navbar__link-name" %></li>
     <% end %>

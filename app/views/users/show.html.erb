@@ -1,3 +1,5 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
 <div class="confetti">
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
@@ -12,13 +14,13 @@
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
-  </div>
+</div>
 
 <div style="display:flex; flex-direction:column; align-items:center; background-color:white; height:100vh; justify-content:center;">
 
-  <h1 id='congrats'>🎉Congratulations🎉</h1>
+  <h1 id='congrats'>🎉Congrats🎉</h1>
   <%= image_tag "sally.jpg", class: "image-congrats" %>
-    <h2 class='complete'> You Completed A walk</h2>
+    <h2 class='complete'> Walk Completed!</h2>
 
   <div>
     <h3 class='share'>Share Your Walk</h3>
@@ -33,17 +35,25 @@
   <div class='end__cards' style= "display: flex; overflow: hidden; width: 100%; justify-content: space-evenly; margin-bottom: 40px;">
     <% @random_walks.each do |walk| %>
       <div class='end__card' style="width: 40%; overflow: hidden; height: 20vh; backgroung antiquewhite;">
-        <div class="img-end__card" style="height: 60%; overflow: hidden;">
-          <%=cl_image_tag walk.photo.key, class:"img_end"%>
-        </div>
-        <div class="info-end__card" style="height: 40%;">
-          <h1><%= walk.title %></h1>
-          <p><%= walk.rating.to_f %></p>
-        </div>
+        <%= link_to walk_path(walk) do %>
+          <div class="img-end__card" style="height: 60%; overflow: hidden;">
+            <%=cl_image_tag walk.photo.key, class:"img_end"%>
+          </div>
+          <div class="info-end__card">
+            <h1><%= walk.title %></h1>
+            <p>
+                <% walk.rating.to_i.times do %>
+                  <span class="fas fa-star"></span>
+                <% end %>
+                <% walk.blank_stars.times do %>
+                  <span class="far fa-star"></span>
+                <% end %>
+              </p>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
-
 
   <%=link_to "Find More Walks", walks_path, id:"congrats-button"%>
 
