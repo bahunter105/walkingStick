@@ -20,7 +20,7 @@
 
 
 
-#menu, li, a {
+#menu, .nav-li, .nav-a {
   margin: 75px 0 -55px 0;
   color: #228381;
   font: 14pt "Roboto", sans-serif;
@@ -32,19 +32,19 @@
   display: none;
 }
 
-#menu, li {
+#menu, .nav-li {
   width: 268px;
   margin-left: 33px;
   text-indent: 37px;
 }
-#menu, a:focus {
+#menu, .nav-a:focus {
   display: block;
   color: #333;
   background-color: #eee;
   transition: all .5s;
 }
 
-#menu, a#navbar__link-name{
+#menu, .nav-a#navbar__link-name{
   color: white;
   font-size: 27px;
   height: 47px;
@@ -114,7 +114,7 @@
 #menu-toggle:checked + #trigger + #burger + #menu {
     animation: checked-anim 1s ease both;
 }
-#menu-toggle:checked + #trigger ~ #menu > li, a {
+#menu-toggle:checked + #trigger ~ #menu > .nav-li, .nav-a {
     display: block;
 }
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
