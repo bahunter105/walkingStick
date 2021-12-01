@@ -14,14 +14,17 @@
   }
 
   h2 {
-    font-size: 19px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    font-stretch: expanded;
     margin-bottom: 2px;
   }
 
   p {
     font-size: 12px;
     margin: 1px 0;
+    font-stretch: expanded;
   }
 
   .card-walk-infos {
