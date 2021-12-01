@@ -18,39 +18,39 @@
     }
 }
 
-#navbar__link{
 
-  li, a {
-    margin: 75px 0 -55px 0;
-    color: #228381;
-    font: 14pt "Roboto", sans-serif;
-    font-weight: 200;
-    text-decoration: none;
-    text-transform: none;
-    list-style: none;
-    outline: 0;
-    display: none;
-  }
 
-  li {
-    width: 268px;
-    margin-left: 33px;
-    text-indent: 37px;
-  }
-  a:focus {
-    display: block;
-    color: #333;
-    background-color: #eee;
-    transition: all .5s;
-  }
-
-  a#navbar__link-name{
-    color: white;
-    font-size: 27px;
-    height: 47px;
-    padding: 30px;
-  }
+#menu, li, a {
+  margin: 75px 0 -55px 0;
+  color: #228381;
+  font: 14pt "Roboto", sans-serif;
+  font-weight: 200;
+  text-decoration: none;
+  text-transform: none;
+  list-style: none;
+  outline: 0;
+  display: none;
 }
+
+#menu, li {
+  width: 268px;
+  margin-left: 33px;
+  text-indent: 37px;
+}
+#menu, a:focus {
+  display: block;
+  color: #333;
+  background-color: #eee;
+  transition: all .5s;
+}
+
+#menu, a#navbar__link-name{
+  color: white;
+  font-size: 27px;
+  height: 47px;
+  padding: 30px;
+}
+
 
 #trigger, #burger, #burger:before, #burger:after {
     position: absolute;
