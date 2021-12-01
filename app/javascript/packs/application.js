@@ -31,13 +31,22 @@ import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { mapDisplayOff } from '../components/map_display_off';
+<<<<<<< HEAD
 import { navbarShiz } from '../components/navbar';
+=======
+import { mapDisplayToggle } from '../components/map_display_toggle';
+>>>>>>> 25a69ee66a78ef9199cacb8e5812688045c8b638
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
+<<<<<<< HEAD
   mapDisplayOff();
   navbarShiz();
+=======
+  // mapDisplayOff();
+  mapDisplayToggle();
+>>>>>>> 25a69ee66a78ef9199cacb8e5812688045c8b638
 });
 
 //

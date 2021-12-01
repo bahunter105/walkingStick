@@ -9,7 +9,11 @@ class WalksController < ApplicationController
 
   def show
     @walk = Walk.find(params[:id])
-    @landmarks = @walk.landmarks
+    @landmarks = []
+    @walk.walk_landmarks.order(landmark_order_no: :asc).each do |walk_landmark|
+      @landmarks << walk_landmark.landmark
+    end
+
     # the `geocoded` scope filters only landmarks with coordinates (latitude & longitude)
     # @markers = @landmarks.geocoded.map do |landmark|
     #   {

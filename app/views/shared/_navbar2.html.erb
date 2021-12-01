@@ -1,28 +1,16 @@
-
-<%= content_for(:navbar_class, "navbar-transparent") %>
-<div class="screen">
-  <div class="navbar">
-  </div>
-  <div class="list">
-    <div class="circle">
-    </div>
-    <div class="menu">
-      <ul>
-          <li><a href="<%=dashboard_path%>">Trick</a></li>
-        <li><%= link_to "Walks", walks_path%></li>
-        <li><%= link_to "Log In", new_user_session_path%></li>
-        <li><%= link_to "Log out", destroy_user_session_path, method: :delete%></li>
-
-      </ul>
-    </div>
-    <div class="burger">
-      <div class="x">
-      </div>
-      <div class="y">
-      </div>
-      <div class="z">
-      </div>
-    </div>
-  </div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<input type="checkbox" id="menu-toggle"/>
+  <label id="trigger" for="menu-toggle"></label>
+  <label id="burger" for="menu-toggle"></label>
+  <ul id="menu">
+    <li id='navbar__link'><a href="/" id='navbar__link-name'>Home</a></li>
+    <% if user_signed_in? %>
+    <li id='navbar__link'><%= link_to "Log Out", destroy_user_session_path, method: :delete, id:"navbar__link-name" %></li>
+    <% else %>
+    <li id='navbar__link'><%= link_to "Log In", new_user_session_path, id:"navbar__link-name" %></li>
+    <% end %>
+    <li id='navbar__link'><%= link_to "Dashboard", dashboard_path, id:"navbar__link-name" %></li>
+    <li id='navbar__link'><a href="#" id='navbar__link-name'>Be a Guide<a></li>
+    <li id='navbar__link'><a href="#" id='navbar__link-name'>Support<a></li>
+    <li id='navbar__link'><a href="#" id='navbar__link-name'>About Us<a></li>
+    <li id='navbar__link'><a href="#" id='navbar__link-name'>Advertise<a></li>
+  </ul>

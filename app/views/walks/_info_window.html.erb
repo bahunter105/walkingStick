@@ -1,2 +1,2 @@
-<h3><%= @walk.walk_landmarks.find_by(landmark: landmark).landmark_order_no%>. <%= landmark.title %></h3>
-<%= cl_image_tag(landmark.photo.key, :aspect_ratio=>"1:1", :effect=>"art:hokusai", :gravity=>"auto", :width=>200, :crop=>"fill") %>
+<p><%= @walk.walk_landmarks.find_by(landmark: landmark).landmark_order_no%>. <%= landmark.title %></p>
+<%= cl_image_tag(landmark.photo.key, :aspect_ratio=>"1:1", :effect=>"art:hokusai", :gravity=>"auto", :width=>100, :crop=>"fill") %>
