@@ -18,7 +18,7 @@
 
   <h1 id='congrats'>🎉Congrats🎉</h1>
   <%= image_tag "sally.jpg", class: "image-congrats" %>
-    <h2 class='complete'> Walk Complete!</h2>
+    <h2 class='complete'> Walk Completed!</h2>
 
   <div>
     <h3 class='share'>Share Your Walk</h3>
@@ -33,45 +33,26 @@
   <div class='end__cards' style= "display: flex; overflow: hidden; width: 100%; justify-content: space-evenly; margin-bottom: 40px;">
     <% @random_walks.each do |walk| %>
       <div class='end__card' style="width: 40%; overflow: hidden; height: 20vh; backgroung antiquewhite;">
-        <div class="img-end__card" style="height: 60%; overflow: hidden;">
-          <%=cl_image_tag walk.photo.key, class:"img_end"%>
-        </div>
-        <div class="info-end__card" style="height: 40%;">
-          <h1><%= walk.title %></h1>
-          <p><%= walk.rating.to_f %></p>
-        </div>
+        <%= link_to walk_path(walk) do %>
+          <div class="img-end__card" style="height: 60%; overflow: hidden;">
+            <%=cl_image_tag walk.photo.key, class:"img_end"%>
+          </div>
+          <div class="info-end__card">
+            <h1><%= walk.title %></h1>
+            <p>
+                <% walk.rating.to_i.times do %>
+                  <span class="fas fa-star"></span>
+                <% end %>
+                <% walk.blank_stars.times do %>
+                  <span class="far fa-star"></span>
+                <% end %>
+              </p>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 
-
   <%=link_to "Find More Walks", walks_path, id:"congrats-button"%>
 
-</div>
-
-<div class='end__cards' style= "display: flex; overflow: hidden; width: 100%; justify-content: space-evenly; margin-bottom: 40px;">
-  <% @random_walks.each do |walk| %>
-    <%= link_to walk_path(walk) do %>
-      <div class="card-trip" style="margin: 5px;">
-        <% if walk.photo.attached?%>
-          <%=cl_image_tag(walk.photo.key)%>
-        <%else%>
-          <img src="https://images.unsplash.com/photo-1604998103924-89e012e5265a?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&ixlib=rb-1.2.1&w=1000&q=80">
-        <%end%>
-        <div class="card-trip-infos">
-          <div>
-            <h2 style="font-size: 14px;"><%= walk.title %></h2>
-            <p>
-              <% walk.rating.to_i.times do %>
-                <span class="fas fa-star"></span>
-              <% end %>
-              <% walk.blank_stars.times do %>
-                <span class="far fa-star"></span>
-              <% end %>
-            </p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
 </div>
