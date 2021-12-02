@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     # @walk = current_user.completed_walks.last.walk
+    @walks = Walk.all
   end
 end
