@@ -3,11 +3,11 @@
 <div>
   <div class="map_container">
     <button type="button" class="btn bg-light btn-sm" id="nav_btn"><i class="fas fa-directions text-secondary"></i></button>
-      <div id="map"
-        data-markers="<%= @markers.to_json %>"
-        data-need-user-marker="true"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-need-user-marker="true"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
 
@@ -32,7 +32,6 @@
           </div>
         <%end %>
       </div>
-      <%end %>
     </div>
   </div>
 </div>
