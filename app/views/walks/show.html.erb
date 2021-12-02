@@ -11,8 +11,6 @@
   <p><%= @walk.description %></p>
 </div>
 
-
-
 <div>
   <div class="map_container">
     <button type="button" class="btn bg-light btn-sm" id="nav_btn"><i class="fas fa-directions text-secondary"></i></button>
@@ -23,9 +21,6 @@
       </div>
   </div>
 </div>
-
-
-
 
 <div class="show-text">
   <h6><strong>This walk includes:</strong></h6>
@@ -68,5 +63,17 @@
 <a class="btn btn-gradient" href= <%="/walks/#{@walk.id}/1"%>>Start Walk!</a>
 
 
-
-<a class="btn btn-gradient" href="<%= walks_path %>">Back to Walks</a>
+<div class="icon-container">
+  <div class="icon-buttons">
+    <div>
+      <a class="fas fa-clipboard-list" href="<%= walks_path %>"></a>
+      <p>Back to walks</p>
+    </div>
+  </div>
+  <div class="icon-buttons">
+    <div>
+      <a class="fas fa-walking" href=<%="/walks/#{@walk.id}/1"%>></a>
+      <p>Start walk!</p>
+    </div>
+  </div>
+</div>
