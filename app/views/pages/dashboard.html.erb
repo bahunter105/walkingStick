@@ -14,6 +14,8 @@
     </ul>
   </div>
 
+<h5> Completed Walks:</h5>
+
   <div class='end__cards' style= "display: flex; overflow: hidden; width: 100%; justify-content: space-evenly; margin-bottom: 40px;">
     <%# <% @walks.find_by(title:"Palacio Real").each do |walk| %>
       <div class='end__card' style="width: 40%; overflow: hidden; height: 20vh; backgroung antiquewhite;">
@@ -56,12 +58,19 @@
       </div>
     <%# <% end %>
   </div>
+</div>
 
-  <div>
-    <a href="">Be A Guide</a>
+<div class="icon-container">
+  <div class="icon-buttons">
+    <div>
+      <a class="fas fa-compass" style="font-size: 32px;" href=""></a>
+      <p>Be a guide</p>
+    </div>
   </div>
-  <div>
-    <%=link_to "Find More Walks", walks_path, id:"congrats-button"%>
+  <div class="icon-buttons">
+    <div>
+      <a class="fas fa-clipboard-list" href="<%= walks_path %>"></a>
+      <p>Find more walks</p>
+    </div>
   </div>
-
 </div>
