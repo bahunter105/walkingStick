@@ -16,4 +16,22 @@
 .audio-display {
   padding: 14px 14px 0px 14px;
   text-align: center;
+  margin: 20px;
+}
+
+.landmark_show_title{
+  margin: 20px;
+}
+
+.landmark-rating {
+    text-align: initial;
+    font-size: 16px;
+}
+
+.top-landmark-show{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
 }
