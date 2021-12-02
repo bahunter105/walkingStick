@@ -26,36 +26,41 @@
   <h6><strong>This walk includes:</strong></h6>
 </div>
 
-<% @walk.walk_landmarks.order(landmark_order_no: :asc).each do |walk_landmark| %>
-  <%= link_to walk_landmark_path(@walk, walk_landmark.landmark) do %>
-    <div class="card-walk">
-      <%= cl_image_tag(walk_landmark.landmark.photo.key) %>
-      <div class="card-walk-infos">
-        <div class="card-group-top">
-          <h2><%= walk_landmark.landmark_order_no%>. <%= walk_landmark.landmark.title %></h2>
-          <p>
-            <% @walk.rating.to_i.times do %>
-              <span class="fas fa-star"></span>
-            <% end %>
-            <% @walk.blank_stars.times do %>
-              <span class="far fa-star"></span>
-            <% end %>
-          </p>
-        </div>
-        <%# <div class="card-group-bottom">
-          <div class="text-left"> %>
-            <%# <p> <%=walk_landmark.landmark.creator.email</p> %>
-          <%# </div>
-          <div class="text-right">
-            <p>Distance</p>
-            <p>Time</p>
-          </div> %>
+<div class="cards">
+  <% @walk.walk_landmarks.order(landmark_order_no: :asc).each do |walk_landmark| %>
+    <%= link_to walk_landmark_path(@walk, walk_landmark.landmark) do %>
+      <div class="card-walk">
+        <%= cl_image_tag(walk_landmark.landmark.photo.key, :height=>1030, :width=>1660, :crop=>"fill") %>
+        <div class="card-walk-infos">
+          <div class="card-group-top">
+            <h2><%= walk_landmark.landmark_order_no%>. <%= walk_landmark.landmark.title %></h2>
+            <p>
+              <% @walk.rating.to_i.times do  %>
+                <span class="fas fa-star"></span>
+              <% end %>
+              <% @walk.blank_stars.times do %>
+                <span class="far fa-star"></span>
+                <% end %>
+            </p>
+          </div>
+          <%# <div class="card-group-bottom">
+            <div class="text-left"> %>
+              <%# <p> <%=walk_landmark.landmark.creator.email</p> %>
+            <%# </div>
+            <div class="text-right">
+              <p>Distance</p>
+              <p>Time</p>
+            </div> %>
+          <%# </div> %>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
+
+
+<a class="btn btn-gradient" href= <%="/walks/#{@walk.id}/1"%>>Start Walk!</a>
 
 
 <div class="icon-container">

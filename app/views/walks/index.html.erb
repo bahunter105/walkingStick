@@ -11,31 +11,38 @@
   </div>
 </div>
 
-<% @walks.each do |walk| %>
-  <%= link_to walk_path(walk) do %>
-    <div class="card-trip">
-      <% if walk.photo.attached?%>
-        <%=cl_image_tag walk.photo.key%>
-      <%else%>
-        <img src="https://images.unsplash.com/photo-1604998103924-89e012e5265a?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&ixlib=rb-1.2.1&w=1000&q=80">
-      <%end%>
-      <div class="card-trip-infos">
-        <div class= 'd-flex align-items-start flex-column'>
-          <h2><%= walk.title %></h2>
-          <p>by <%= walk.creator.username %></p>
-        </div>
-        <div>
-          <p>Distance: <%=walk.distance_to_km%> km</p>
-          <p>
-            <% walk.rating.to_i.times do %>
-              <span class="fas fa-star"></span>
-            <% end %>
-            <% walk.blank_stars.times do %>
-              <span class="far fa-star"></span>
-            <% end %>
-          </p>
+
+
+
+
+
+<div class="cards">
+  <% @walks.each do |walk| %>
+    <%= link_to walk_path(walk) do %>
+      <div class="card-trip">
+        <% if walk.photo.attached?%>
+          <%=cl_image_tag walk.photo.key%>
+        <%else%>
+          <img src="https://images.unsplash.com/photo-1604998103924-89e012e5265a?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8&ixlib=rb-1.2.1&w=1000&q=80">
+        <%end%>
+        <div class="card-trip-infos">
+          <div class= 'd-flex align-items-start flex-column'>
+            <h2><%= walk.title %></h2>
+            <p>by <%= walk.creator.username %></p>
+          </div>
+          <div>
+            <p>Distance: <%=walk.distance_to_km%> km</p>
+            <p>
+              <% walk.rating.to_i.times do %>
+                <span class="fas fa-star"></span>
+              <% end %>
+              <% walk.blank_stars.times do %>
+                <span class="far fa-star"></span>
+              <% end %>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
