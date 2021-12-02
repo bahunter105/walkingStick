@@ -19,6 +19,36 @@ category = Category.new
 category.name = 'nature'
 category.save!
 
+walk = Walk.create!(
+  creator_id: user1.id,
+  title: 'Parque del Capricho',
+  category: category,
+  description: 'The Prado Museum, officially known as Museo Nacional del Prado, is the main Spanish national art museum, located in central Madrid.',
+  location: 'Madrid, Spain, España',
+  rating: rand(4..5))
+file = File.open('app/assets/images/parque_capricho.jpg')
+walk.photo.attach(io: file, filename: 'parque_capricho.jpg', content_type: 'image/jpg')
+walk.creator_id = user1.id
+walk.distance = 1800
+walk.save!
+puts walk.title
+
+walk = Walk.create!(
+  creator_id: user1.id,
+  title: 'Parque los Molinos',
+  category: category,
+  description: 'The Prado Museum, officially known as Museo Nacional del Prado, is the main Spanish national art museum, located in central Madrid.',
+  location: 'Madrid, Spain, España',
+  rating: rand(4..5))
+file = File.open('app/assets/images/los_molinos.jpg')
+walk.photo.attach(io: file, filename: 'los_molinos.jpg', content_type: 'image/jpg')
+walk.creator_id = user1.id
+walk.distance = 1800
+
+walk.save!
+puts walk.title
+
+
 walk = Walk.new(
   creator_id: user1.id,
   title: 'Retiro Park',
@@ -153,6 +183,34 @@ wl.walk_id = walk.id
 wl.landmark_id = landmark.id
 wl.landmark_order_no = 4
 wl.save!
+
+walk = Walk.create!(
+  creator_id: user1.id,
+  title: 'Museo Thyssen',
+  description: 'A tour through the emblematic and majestic royal palace',
+  category: category,
+  location: 'Madrid, Spain, España',
+  rating: rand(4..5))
+file = File.open('app/assets/images/thyssen.jpg')
+walk.photo.attach(io: file, filename: 'thyssen.jpg', content_type: 'image/jpg')
+walk.creator_id = user1.id
+walk.distance = 2600
+walk.save!
+puts walk.title
+
+walk = Walk.create!(
+  creator_id: user1.id,
+  title: 'Museo Sorolla ',
+  description: 'A tour through the emblematic and majestic royal palace',
+  category: category,
+  location: 'Madrid, Spain, España',
+  rating: rand(4..5))
+file = File.open('app/assets/images/sorolla.jpg')
+walk.photo.attach(io: file, filename: 'sorolla.jpg', content_type: 'image/jpg')
+walk.creator_id = user1.id
+walk.distance = 2600
+walk.save!
+puts walk.title
 
 walk = Walk.create!(
   creator_id: user1.id,
