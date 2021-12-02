@@ -1,0 +1,57 @@
+.fa-star {
+  color: rgba($color: #FAB12D, $alpha: 1.0);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
+}
+
+.fa-walking {
+  font-size: 32px;
+  color: rgba($color: $primary, $alpha: 1.0);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
+}
+
+.fa-clipboard-list {
+  font-size: 32px;
+  color: rgba($color: $info, $alpha: 1.0);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
+}
+
+.fa-shoe-prints {
+  font-size: 32px;
+  color: rgba($color: #c44536, $alpha: 1.0);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
+}
+
+.fa-archway {
+  font-size: 32px;
+  color: rgba($color: #255f85, $alpha: 1.0);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
+}
+
+.fa-flag-checkered {
+  font-size: 32px;
+  color: rgba($color: #21b4c7, $alpha: 1.0);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.75)
+}
+
+.icon-container {
+  height: 10vh;
+  position: sticky;
+  bottom: 0px;
+  display: flex;
+
+  .icon-buttons {
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(235, 235, 235);
+  }
+
+  p {
+    color: rgb(114, 114, 114);
+    font-size: 10px;
+    font-weight: 500;
+    padding-top: 1px;
+  }
+}

@@ -38,10 +38,17 @@
       </div>
     </div>
 
-<p>
-  <a class="btn btn-gradient" href= "<%= walk_landmark_path(@walk, @landmark) %>">I have arrived!</a>
-</p>
-
-<p>
-  <a class="btn btn-gradient" href="<%= walk_path(@walk) %>">Back to <%= @walk.title %></a>
-</p>
+<div class="icon-container">
+  <div class="icon-buttons">
+    <div>
+      <a class="fas fa-clipboard-list" href="<%= walk_path(@walk) %>"></a>
+      <p>Back to <%= @walk.title %></p>
+    </div>
+  </div>
+  <div class="icon-buttons">
+    <div>
+      <a class="fas fa-shoe-prints" href="<%= walk_landmark_path(@walk, @landmark) %>"></a>
+      <p>I have arrived!</p>
+    </div>
+  </div>
+</div>
