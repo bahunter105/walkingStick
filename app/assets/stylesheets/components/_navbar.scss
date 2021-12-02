@@ -24,7 +24,7 @@
   margin: 75px 0 -55px 0;
   color: #228381;
   font: 14pt "Roboto", sans-serif;
-  font-weight: 200;
+  // font-weight: 200;
   text-decoration: none;
   text-transform: none;
   list-style: none;
@@ -46,7 +46,7 @@
 
 #menu, .nav-a#navbar__link-name{
   color: white;
-  font-size: 27px;
+  font-size: 20px;
   height: 47px;
   padding: 30px;
 }
@@ -103,7 +103,8 @@
     margin: 0; padding: 0;
     width: 65px;
     height: 74px;
-    background-color: #228381;;
+    background-color: #228381;
+    opacity: 85%;
     border-bottom-right-radius: 100%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
     // animation: not-checked-anim .1s both;
