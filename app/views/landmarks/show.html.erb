@@ -29,21 +29,21 @@
   <div class="icon-buttons">
     <div>
       <a class="fas fa-clipboard-list" href=<%= walk_path(@walk)%>></a>
-      <p>Back <%= @walk.title %></p>
+      <p>Back to <%= @walk.title %></p>
     </div>
   </div>
   <% if (@next_order_number - 1) == @walk.walk_landmarks.maximum("landmark_order_no") %>
     <div class="icon-buttons">
       <div>
         <a class="fas fa-flag-checkered" href="<%= user_path(current_user)%>"></a>
-        <p>Finish Your Walk</p>
+        <p>Finish walk</p>
       </div>
     </div>
   <% else %>
     <div class="icon-buttons">
       <div>
         <a class="fas fa-archway" href=<%="/walks/#{@walk.id}/#{@next_order_number}" %>></a>
-        <p>Next Landmark</p>
+        <p>Next landmark</p>
       </div>
     </div>
   <% end %>
