@@ -1,3 +1,7 @@
+.card-super-container {
+  margin-bottom: 12vh;
+}
+
 .card-walk {
   overflow: hidden;
   height: 14vh;
@@ -109,12 +113,12 @@
   margin: auto;
   border-radius: 46px;
   position: absolute;
-  top: 89vh;
+  top: 93.5vh;
   left: 50%;
   transform: translate(-50%, 0%);
   background-size: cover;
   color: white;
-  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.8);
 }
 
 .card-home-green-girl__text{
@@ -138,12 +142,12 @@
   margin: auto;
   border-radius: 46px;
   position: absolute;
-  top: 150vh;
+  top: 154.5vh;
   left: 50%;
   transform: translate(-50%, 0%);
   background-size: cover;
   color: white;
-  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.8);
 }
 
 .card-home-man__text {
@@ -159,7 +163,8 @@
   }
 
   p {
-    padding: 0 80px 0 0;
+    font-size: 14px;
+    padding: 0 130px 0 0;
   }
 }
 
@@ -172,12 +177,12 @@
   margin: auto;
   border-radius: 46px;
   position: absolute;
-  top: 193vh;
+  top: 197.5vh;
   left: 50%;
   transform: translate(-50%, 0%);
   background-size: cover;
   color: white;
-  text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.8);
 }
 
 .card-home-red-girl__text {
@@ -193,6 +198,7 @@
   }
 
   p {
+    font-size: 16px;
     padding: 0 0 0 80px;
   }
 }

@@ -34,23 +34,31 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: image-url("madrid_fall.png");
+  background-image: image-url("madrid.jpg");
   background-size: cover;
   background-position: center;
+
+  .banner-home-container {
+    justify-content: space-between;
+    height: 32%;
+    display: flex;
+    flex-direction: column;
+  }
 
   h1 {
     color: white;
     font-weight: bold;
     font-size: 46px;
-    text-shadow: 1px 4px 10px rgba(0,0,0,0.8);
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.8);
   }
+
   p {
     color: white;
     opacity: .8;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 30px;
-    text-shadow: 1px 4px 10px rgba(0,0,0,1);
+    text-shadow: 1px 2px 4px rgba(0,0,0,1);
   }
 }
 
