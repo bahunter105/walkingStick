@@ -26,7 +26,13 @@
 </div>
 
 <div class="icon-container">
-  <% if @next_order_number == 6 %>
+  <div class="icon-buttons">
+    <div>
+      <a class="fas fa-clipboard-list" href=<%= walk_path(@walk)%>></a>
+      <p>Back <%= @walk.title %></p>
+    </div>
+  </div>
+  <% if (@next_order_number - 1) == @walk.walk_landmarks.maximum("landmark_order_no") %>
     <div class="icon-buttons">
       <div>
         <a class="fas fa-flag-checkered" href="<%= user_path(current_user)%>"></a>
@@ -41,10 +47,4 @@
       </div>
     </div>
   <% end %>
-  <div class="icon-buttons">
-    <div>
-      <a class="fas fa-clipboard-list" href=<%= walk_path(@walk)%>></a>
-      <p>Back <%= @walk.title %></p>
-    </div>
-  </div>
 </div>
