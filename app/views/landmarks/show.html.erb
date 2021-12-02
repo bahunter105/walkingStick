@@ -1,29 +1,39 @@
 <%= content_for(:navbar_class, "navbar-transparent") %>
 
-<div class="banner-small" style="background-image: url(<%=cl_image_path @landmark.photo.key%>)">
-  <div class="banner-container-small">
-    <h2><%= @landmark.title %></h2>
+<div class=top-landmark-show>
+<%# tooop %>
+  <div >
+    <div class="banner-small" style="background-image: url(<%=cl_image_path @landmark.photo.key%>)">
+      <div class="banner-container-small">
+
+      </div>
+    </div>
+
+    <div>
+      <h2 class="landmark_show_title"><%= @landmark.title %></h2>
+    </div>
+
+    <div class="audio-display">
+      <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
+    </div>
+
+    <div class="show-text">
+      <p><%= @landmark.description %></p>
+    </div>
+  </div>
+<%# bottoom %>
+  <div style="margin:0px 16px">
+    <h6><strong>Created by <%= @landmark.creator.username %></strong></h6>
+    <p class="landmark-rating"><strong>Landmark rating</strong>
+    <% @walk.rating.to_i.times do %>
+      <span class="fas fa-star"></span>
+    <% end %>
+    <% @walk.blank_stars.times do %>
+      <span class="far fa-star"></span>
+    <% end %></p>
   </div>
 </div>
 
-<div class="audio-display">
-  <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
-</div>
-
-<div class="show-text">
-  <p><%= @landmark.description %></p>
-  <h6><strong>Created by <%= @landmark.creator.username %></strong></h6>
-</div>
-
-<div>
-  <p><strong>Landmark rating</strong>
-  <% @walk.rating.to_i.times do %>
-    <span class="fas fa-star"></span>
-  <% end %>
-  <% @walk.blank_stars.times do %>
-    <span class="far fa-star"></span>
-  <% end %></p>
-</div>
 
 <div class="icon-container">
   <div class="icon-buttons">
