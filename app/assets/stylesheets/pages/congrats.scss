@@ -1,36 +1,39 @@
 .image-congrats {
   width: 171px;
   border-radius: 100%;
-  margin: 39px;
+  margin: 13px 20px 23px 20px;
 }
 
-#congrats{
+#congrats {
   color: #228381;
-  font-family: "Roboto", "Helvetica", "sans-serif";
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  letter-spacing: 0.9px;
+  margin-top: 38px;
 }
-.complete{
-  margin-bottom: 1.5rem;
-  font-family: "Roboto", "Helvetica", "sans-serif";
-  font-weight: 500;
+.complete {
+  font-weight: 600;
   line-height: 1.2;
   font-size: 2rem;
+  color: #228381;
+  letter-spacing: 0.6px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
-.share{
-      margin-bottom: 0.5rem;
-    font-family: "Roboto", "Helvetica", "sans-serif";
-    font-weight: 500;
-    line-height: 1.2;
-    font-size: 1.75rem;
+.share {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 1.5rem;
+  color: #228381;
+  letter-spacing: 0.3px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
 .socials{
-  color: #228381;
   font-size: 27px;
   margin: 9px;
 }
 
-#congrats-button{
+#congrats-button {
   position: absolute;
   bottom: 15px;
   border-radius: 32px;
@@ -44,24 +47,32 @@
   border: 1px solid #218380;
 }
 
-#conglist{
-  margin-top: 0;
-  margin-bottom: 1rem;
+#conglist {
+  margin: 0;
   padding: inherit;
 }
 
-.img_end{
-  height: 100%;
+.end__card-container {
   width: 100%;
-  object-fit: cover;
+  display: flex;
+  overflow: hidden;
+  height: 25vh;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+
+  .img-end__card {
+    padding: 10px;
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
 }
 
 .info-end__card{
-    height: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   h1{
     font-size: 20px;
@@ -69,25 +80,23 @@
     font-size: 14px;
     margin: 0px;
     color: $walkingstick-green;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   }
 
   p {
     font-size: 10px;
     margin:0px;
   }
-
 }
 
 $yellow: #ffd300;
 $blue: #17d3ff;
 $pink: #ff4e91;
-
 $duration: 1000;
 
 @function randomNum($min, $max) {
   $rand: random();
   $randomNum: $min + floor($rand * (($max - $min) + 1));
-
   @return $randomNum;
 }
 
@@ -99,7 +108,7 @@ $duration: 1000;
   width: 100%;
   height: 400px;
   overflow: hidden;
-  position:absolute;
+  position: absolute;
 }
 
 .confetti-piece {
@@ -158,4 +167,8 @@ $duration: 1000;
   to {
     transform: translateY(200px);
   }
+}
+
+#text-nearby {
+ color: rgb(54, 54, 54);
 }
