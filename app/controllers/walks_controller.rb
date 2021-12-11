@@ -1,4 +1,6 @@
 class WalksController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     if params[:search].present?
       @walks = Walk.global_search(params[:search][:query])
