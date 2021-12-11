@@ -61,12 +61,12 @@
     height: 2px;
     transition: .1s ease;
     cursor: pointer;
-    z-index: 2;
+    z-index: 5;
 }
 #trigger {
     height: 25px;
     background: none;
-    z-index: 3;
+    z-index: 5;
 }
 #burger:before {
     content: " ";
@@ -109,7 +109,7 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
     // animation: not-checked-anim .1s both;
     transition: .1s;
-    z-index: 1;
+    z-index: 4;
     top: 0;
 }
 #menu-toggle:checked + #trigger + #burger + #menu {
