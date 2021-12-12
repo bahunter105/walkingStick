@@ -52,3 +52,20 @@
     justify-content: space-between;
     text-align: start;
 }
+
+.get-audio{
+  display: flex;
+  justify-content: center;
+  background: white;
+  border: 1px solid #ebebeb;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  p {
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    font-style: italic;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}

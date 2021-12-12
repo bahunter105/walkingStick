@@ -1,4 +1,6 @@
 class LandmarksController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[show]
+
   def show
     @landmark = Landmark.find(params[:id])
     @walk = Walk.find(params[:walk_id])

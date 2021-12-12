@@ -12,11 +12,15 @@
     <div>
       <h2 class="landmark_show_title"><%= @landmark.title %></h2>
     </div>
-
-    <div class="audio-display">
-      <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
-    </div>
-
+    <% if  user_signed_in? %>
+      <div class="audio-display">
+        <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
+      </div>
+    <% else %>
+      <div class="get-audio">
+        <p>Sign-in to get audio content!</p>
+      </div>
+    <% end %>
     <div class="show-text">
       <p><%= @landmark.description %></p>
     </div>
@@ -34,26 +38,44 @@
   </div>
 </div>
 
-<div class="icon-container">
-  <div class="icon-buttons">
-    <div>
-      <a class="fas fa-clipboard-list" href=<%= walk_path(@walk)%>></a>
-      <p>Back to <%= @walk.title %></p>
+
+<% if  user_signed_in? %>
+  <div class="icon-container">
+    <div class="icon-buttons">
+      <div>
+        <a class="fas fa-clipboard-list" href=<%= walk_path(@walk)%>></a>
+        <p>Back to <%= @walk.title %></p>
+      </div>
+    </div>
+    <% if (@next_order_number - 1) == @walk.walk_landmarks.maximum("landmark_order_no") %>
+      <div class="icon-buttons">
+        <div>
+          <a class="fas fa-flag-checkered" href="<%= user_path(current_user)%>"></a>
+          <p>Finish walk</p>
+        </div>
+      </div>
+    <% else %>
+      <div class="icon-buttons">
+        <div>
+          <a class="fas fa-archway" href=<%="/walks/#{@walk.id}/#{@next_order_number}" %>></a>
+          <p>Next landmark</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="icon-container">
+    <div class="icon-buttons">
+      <div>
+        <a class="fas fa-clipboard-list" href=<%= walk_path(@walk)%>></a>
+        <p>Back to <%= @walk.title %></p>
+      </div>
+    </div>
+    <div class="icon-buttons">
+      <div>
+        <a class="fas fa-walking" href=<%="/walks/#{@walk.id}/1"%>></a>
+        <p>Start walk!</p>
+      </div>
     </div>
   </div>
-  <% if (@next_order_number - 1) == @walk.walk_landmarks.maximum("landmark_order_no") %>
-    <div class="icon-buttons">
-      <div>
-        <a class="fas fa-flag-checkered" href="<%= user_path(current_user)%>"></a>
-        <p>Finish walk</p>
-      </div>
-    </div>
-  <% else %>
-    <div class="icon-buttons">
-      <div>
-        <a class="fas fa-archway" href=<%="/walks/#{@walk.id}/#{@next_order_number}" %>></a>
-        <p>Next landmark</p>
-      </div>
-    </div>
-  <% end %>
-</div>
+<% end %>
