@@ -5,4 +5,60 @@
       <i class="fas fa-search"></i>
     </button>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+  <script>
+  (function() {
+    var placesAutocomplete = places({
+      appId: ENV[YOUR_PLACES_APP_ID],
+      apiKey: ENV[YOUR_PLACES_API_KEY],
+      container: document.querySelector('#search_query'),
+      templates: {
+        value: function(suggestion) {
+          return suggestion.name;
+        }
+      }
+    }).configure({
+      type: 'city',
+      aroundLatLngViaIP: false,
+    });
+  })();
+
+(function() {
+    var placesAutocomplete = places({
+      appId: 'LCYVVVG5A3',
+      apiKey: 'pl4523fe3a866ed2c73600124bf77b7c2e',
+      container: document.querySelector('#search_query'),
+      templates: {
+        value: function(suggestion) {
+          return suggestion.name;
+        }
+      }
+    }).configure({
+      type: 'city',
+      aroundLatLngViaIP: false,
+    });
+  })();
+
+  </script>
 <% end %>
+
+<input type="search" id="city" class="form-control" placeholder="In which city do you live?" />
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+<script>
+(function() {
+  var placesAutocomplete = places({
+    appId: ENV[YOUR_PLACES_APP_ID],
+    apiKey: ENV[YOUR_PLACES_API_KEY],
+    container: document.querySelector('#city'),
+    templates: {
+      value: function(suggestion) {
+        return suggestion.name;
+      }
+    }
+  }).configure({
+    type: 'city',
+    aroundLatLngViaIP: false,
+  });
+})();
+</script>
