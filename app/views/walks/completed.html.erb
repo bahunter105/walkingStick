@@ -1,0 +1,88 @@
+<div class="confetti">
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+  <div class="confetti-piece"></div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; height:100vh; justify-content:center;">
+
+  <h1 id='congrats'>Congrats Hunter!</h1>
+  <%= image_tag "hunters_headshot.jpg", class: "image-congrats" %>
+  <h2 class='complete'> Walk Completed!</h2>
+
+  <div>
+    <h3 class='share'>Share Your Walk</h3>
+    <ul id="conglist">
+      <li class="fab fa-twitter-square socials"></li>
+      <li class="fab fa-facebook-square socials"></li>
+      <li class="fab fa-instagram-square socials"></li>
+      <li class="fab fa-google-plus-square socials"></li>
+    </ul>
+  </div>
+
+  <div id="text-nearby">Nearby walks:</div>
+
+  <div class="end__card-container">
+    <%# <% @walks.find_by(title:"Palacio Real").each do |walk| %>
+      <%= link_to walk_path(@walks.find_by(title:"Palacio Real")) do %>
+        <div class="img-end__card">
+          <%=cl_image_tag @walks.find_by(title:"Palacio Real").photo.key, class:"img_end"%>
+        </div>
+        <div class="info-end__card">
+          <h1><%= @walks.find_by(title:"Palacio Real").title %></h1>
+          <p>
+            <% @walks.find_by(title:"Palacio Real").rating.to_i.times do %>
+              <span class="fas fa-star"></span>
+            <% end %>
+            <% @walks.find_by(title:"Palacio Real").blank_stars.times do %>
+              <span class="far fa-star"></span>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+    <%# <% end %>
+    <%# <% @walks.find_by(title:"Tapas Walk").each do |walk| %>
+      <%= link_to walk_path(@walks.find_by(title:"Tapas Walk")) do %>
+        <div class="img-end__card">
+          <%= cl_image_tag @walks.find_by(title:"Tapas Walk").photo.key, class:"img_end" %>
+        </div>
+        <div class="info-end__card">
+          <h1><%= @walks.find_by(title:"Tapas Walk").title %></h1>
+          <p>
+            <% @walks.find_by(title:"Tapas Walk").rating.to_i.times do %>
+              <span class="fas fa-star"></span>
+            <% end %>
+            <% @walks.find_by(title:"Tapas Walk").blank_stars.times do %>
+              <span class="far fa-star"></span>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+    <%# <% end %>
+  </div>
+</div>
+
+<div class="icon-container">
+  <div class="icon-buttons" style="background-color:#f6ffff;">
+    <div>
+      <a class="fas fa-compass"></a>
+      <p>Be a guide</p>
+    </div>
+  </div>
+  <div class="icon-buttons" style="background-color:#f6ffff;">
+    <div>
+      <a class="fas fa-clipboard-list" href="<%= walks_path %>"></a>
+      <p>Find more walks</p>
+    </div>
+  </div>
+</div>

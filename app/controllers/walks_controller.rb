@@ -33,15 +33,26 @@ class WalksController < ApplicationController
     end
   end
 
+  def completed
+    @walks = Walk.all
+    @walk = Walk.find(params[:walk_id])
+    @user = User.find(params[:user_id])
+
+    CompletedWalk.create!(
+      walk_id: @walk.id,
+      user_id: @user.id
+    )
+  end
+
   def navigate
     @walk = Walk.find(params[:walk_id])
     @landmark = @walk.walk_landmarks.find_by(landmark_order_no: params[:landmark_order_no]).landmark
     @markers = [
-       {
-         lat: @landmark.latitude,
-         lng: @landmark.longitude,
-         info_window: render_to_string(partial: "info_window", locals: { landmark: @landmark })
-       }
+      {
+        lat: @landmark.latitude,
+        lng: @landmark.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { landmark: @landmark })
+      }
     ]
   end
 
@@ -49,4 +60,5 @@ class WalksController < ApplicationController
     @walk = Walk.find(params[:id])
     @landmark = @walk.landmarks.first
   end
+
 end
