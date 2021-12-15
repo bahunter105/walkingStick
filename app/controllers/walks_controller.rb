@@ -35,6 +35,13 @@ class WalksController < ApplicationController
 
   def completed
     @walks = Walk.all
+    @walk = Walk.find(params[:walk_id])
+    @user = User.find(params[:user_id])
+
+    CompletedWalk.create!(
+      walk_id: @walk.id,
+      user_id: @user.id
+    )
   end
 
   def navigate

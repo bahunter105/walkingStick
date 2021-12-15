@@ -50,7 +50,7 @@
     <% if (@next_order_number - 1) == @walk.walk_landmarks.maximum("landmark_order_no") %>
       <div class="icon-buttons">
         <div>
-          <a class="fas fa-flag-checkered" href="<%= user_path(current_user)%>"></a>
+          <a class="fas fa-flag-checkered" href=<%= completed_path(@walk, current_user.id)%>></a>
           <p>Finish walk</p>
         </div>
       </div>
