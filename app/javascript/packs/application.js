@@ -32,12 +32,14 @@ import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
 import { initMapbox } from '../plugins/init_mapbox';
 import { mapDisplayOff } from '../components/map_display_off';
 import { mapDisplayToggle } from '../components/map_display_toggle';
+import { audioListener } from '../components/audio_listener';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
   // mapDisplayOff();
   mapDisplayToggle();
+  audioListener();
 });
 
 //
