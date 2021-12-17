@@ -30,12 +30,10 @@ class Walk < ApplicationRecord
         base_url += "#{target_lm.longitude},#{target_lm.latitude};"
       end
     end
-
     api_setting_url = "?alternatives=false&continue_straight=true&geometries=geojson&overview=simplified&steps=false&access_token="
     mapbox_key = ENV['MAPBOX_API_KEY']
     map_api_url = base_url.chomp(';') + api_setting_url + mapbox_key
-
-    dist_hash = URI.open(base_url)
+    dist_hash = URI.open(map_api_url)
     parsd = JSON.parse(dist_hash.string)
     routes = parsd["routes"]
     routes_1 = routes[0]
@@ -52,5 +50,4 @@ class Walk < ApplicationRecord
   def blank_stars
     5 - rating.to_i
   end
-
 end
