@@ -4,6 +4,8 @@ class Landmark < ApplicationRecord
   has_many :tags, through: :landmark_tags
   has_many :walk_landmarks
   has_many :walks, through: :walk_landmarks
+  has_many :completed_landmarks, dependent: :destroy
+  has_many :users, through: :completed_landmarks
   has_many :ratings
   has_many :users, through: :ratings
   has_one_attached :photo
