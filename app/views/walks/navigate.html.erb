@@ -1,5 +1,18 @@
 <% @map_api_url%>
 <% ENV['MAPBOX_API_KEY'] %>
+
+<%# Below is added to reload faulty nav map for first landmark only %>
+<% if @landmark_order_no === "1" %>
+  <%= javascript_tag do %>
+    if(!window.location.hash) {
+      //setting window location
+      window.location = window.location + '#1';
+      //using reload() method to reload web page
+      window.location.reload();
+      }
+  <% end %>
+<% end %>
+
 <div>
   <div class="map_container">
     <button type="button" class="btn bg-light btn-sm" id="nav_btn"><i class="fas fa-directions text-secondary"></i></button>
