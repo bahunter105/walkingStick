@@ -8,7 +8,6 @@ const mapDisplayToggle = () => {
 
     button.addEventListener('click', (event) => {
       let directionsPopup = document.querySelector(".mapboxgl-ctrl-directions");
-      console.log(directionsPopup)
       directionsPopup.classList.toggle("d-none")
 
       let step = document.querySelector(".mapbox-directions-step");

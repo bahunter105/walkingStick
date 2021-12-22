@@ -84,6 +84,14 @@ const initMapbox = () => {
 
       });
       map.addControl(directions, 'top-left');
+      window.addEventListener("load", (event) => {
+        //wait for dom is fully loaded, wait 0.5 seconds and click on the Toggle menue button
+        async function clickNavToggle() {
+          await new Promise(resolve => setTimeout(resolve, 500)); // 0.5 sec
+          document.querySelector('#nav_btn').click()
+        }
+        clickNavToggle();
+      });
     }
   }
 }
