@@ -14,7 +14,7 @@
     </div>
     <% if  user_signed_in? %>
       <div class="audio-display">
-        <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls></audio>
+        <audio src="<%=cloudinary_url(@landmark.audio.key, :resource_type=>"video")%>" controls autoplay></audio>
       </div>
     <% else %>
       <div class="get-audio">
