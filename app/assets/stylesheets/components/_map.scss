@@ -27,8 +27,12 @@
     background-color: $walkingstick-green;
   }
   .directions-control.directions-control-directions {
-    background: #fab12df0;
+    background: #fcfdf6ed;
     height: 270px;
+    box-shadow: 0px 0px 8.5px #585757b8;
+  }
+  .mapbox-directions-step{
+    filter: invert(100%);
   }
 }
 
